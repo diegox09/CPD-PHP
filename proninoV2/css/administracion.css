@@ -1,0 +1,86 @@
+/*Generico*/
+body{background:#FFF;color:#333;font-family:Verdana, Geneva, sans-serif;font-size:13px;margin:0;padding:0}
+a,a:hover{color:#15c;text-decoration:none;cursor:pointer}
+
+#cargando{width:100%;position:fixed;text-align:center;top:4px;z-index:10}
+#cargando span{font-size:12px;font-weight:bold;background:#f9edbe;border-left:1px solid #efe1ac;border-right:1px solid #efe1ac;border-bottom:1px solid #efe1ac;border-radius:0 0 5px 5px;padding:5px 10px}
+
+#header{width:100%;height:80px;min-width:800px;position:relative;background:#fff;border-bottom:1px solid #e5e5e5;margin:auto;padding:10px 0;font-weight:bold}
+#corprodinco{font-size:24px;width:800px;height:70px;margin:-90px auto 0;top:0;position:relative;font-size:24px;font-weight:bold;text-align:center;padding:10px 0;}
+#corprodinco div{float:left}
+
+label{font-weight:bold;color:#383838}
+input[type="text"], input[type="password"]{border:1px solid #d5d5d5;padding:3px 5px;color:#000}
+input[type="file"]{border:1px solid #d5d5d5;padding:3px 5px;height:25px;color:#000}
+input[type="submit"], input[type="reset"], input[type="button"]{height:32px;font-weight:bold;padding:6px;border-radius:2px;cursor:pointer}
+input:focus, select:focus, textarea:focus{background:#FFFFF0;border:1px solid #efe1ac}
+input:hover, select:hover, textarea:hover{border:1px solid #efe1ac}
+input[readonly], select[readonly] ,textarea[readonly], input[disabled], select[disabled] ,textarea[disabled]{background:#F5F5F5;border:1px solid #e5e5e5}
+select{border:1px solid #d5d5d5;padding:2px;color:#000}
+textarea{border:1px solid #d5d5d5;width:97%;height:70px;padding:3px 5px;resize:none;color:#000}
+.input_error{border:1px solid #d14836!important}
+
+.boton_azul{background:#4d90fe;color:#ddd;border:1px solid #3079ed}
+.boton_azul:hover, .boton_azul:focus{background:#3f7ae8;color:#fff;border:1px solid #3f5bb7}
+.boton_azul:disabled{background:#8BB2FF;color:#ccc;border:1px solid #8BB2FF}
+
+#footer{width:100%;min-width:800px;height:30px;position:fixed;bottom:0;background:#f5f5f5;border-top:1px solid #e5e5e5;margin:auto}
+#footer div{padding:6px}
+#footer a{color:#383838}
+#footer a:hover{color:#989898}
+
+#error{font-size:12px;font-weight:bold;position:fixed;bottom:0;right:0;background:#f9edbe;border-left:1px solid #efe1ac;border-top:1px solid #efe1ac;border-radius:5px 0 0 0;padding:5px 10px;z-index:10}
+
+#ayuda{background:url(../img/help_g.png) no-repeat;padding:2px}
+#ayuda:hover, #ayuda:focus{background:url(../img/help_c.png) no-repeat}
+
+/*Contenido*/
+#overlay{position:fixed;width:100%;height:100%;top:0;left:0;background:url(../img/overlay.png);z-index:2}
+
+.clear{clear:both}
+.center{text-align:center}
+
+.boton_naranja{background:#d14836;color:#ddd;border:1px solid #d14836}
+.boton_naranja:hover, .boton_naranja:focus{background:#c93727;color:#fff;border:1px solid #b9281a}
+.boton_naranja:disabled{background:#d14836;color:#ddd;border:1px solid #d14836}
+
+.boton_gris{background:#f1f1f1;color:#666;border:1px solid #d1d1d1}
+.boton_gris:hover, .boton_gris:focus{background:#fbfbfb;color:#222;border:1px solid #dbdbdb}
+.boton_gris:disabled{background:#f5f5f5;color:#ccc;border:1px solid #d5d5d5}
+
+.boton_verde{background:#3d9400;color:#fff;border:1px solid #29691d}
+.boton_verde:hover, .boton_verde:focus{background:#398a00;color:#fff;border:1px solid #29691d}
+.boton_verde:disabled{background:#3d9400;color:#fff;border:1px solid #29691d}
+
+#nombre_user{color:#383838;font-size:12px;position:absolute;top:5px;left:8px}
+#salir{color:#383838;font-size:12px;position:absolute;top:5px;right:8px}
+#salir:hover, .span{color:#c53727}
+#info{width:1002px;overflow:auto;margin:auto}
+
+/**/
+.input_c{width:88%}
+.input_l{width:96%}
+.select_c{width:99%}
+.select_l{width:100%}
+
+#info{width:1002px;overflow:auto;margin:auto;position:relative;min-height:450px}
+#info div{float:left}
+
+#menu{width:465px;position:absolute;top:10px;left:50px}
+
+.formulario{width:465px;position:absolute;top:10px;left:460px;background:#f5f5f5;border:1px solid #d5d5d5;border-radius:3px;margin:4px} 
+.formulario form div{margin:5px 10px}
+.header_info{font-size:12px;font-weight:bold;padding:10px 0;text-align:center;background-color:#e5e5e5;border-bottom:1px solid #d5d5d5;width:100%!important;margin:0px!important}
+.header_info a{color:#383838}
+.header_info a:hover{color:#c53727}
+.label_l{clear:both;width:470px!important}
+
+#espacio{height:50px}
+.actualizar{background:url(../img/reload_g.png) no-repeat;padding:2px}
+.actualizar:hover, .actualizar:focus{background:url(../img/reload_c.png) no-repeat}
+#lista li{padding:5px}
+#lista a{font-size:14px;padding:5px}
+#lista a:hover, #lista a:focus{color:#00973B}
+.cargar_actividad:hover, .cargar_ars:hover, .cargar_departamento:hover, .cargar_municipio:hover, .cargar_barrio:hover, .cargar_colegio:hover, .cargar_sede:hover, .cargar_escuela:hover, .cargar_sitio:hover, .cargar_usuario:hover{font-weight:bold;cursor:pointer}
+
+#consulta{width:1002px;text-align:center;font-size:16px;font-weight:bold;color:#c53727;padding:10px 0}

@@ -1,0 +1,22 @@
+Id Factura: 30
+Numero Factura: 1772
+Ciudad: CÚCUTA
+Fecha: 2011-11-17
+Id Cliente: 1
+Nit Cliente: 800.142.383-7
+Nombre Cliente: FIDUBOGOTA S.A. - ENCARGO FIDUCIARIO 657/08 FIDEICOMISO ACCION SOCIAL-FIP.
+Telefono Cliente: 091/3485400
+Direccion Cliente: CALLE 67 #7-37 PISO 3 BOGOTA
+Descripcion: 100% DEL VALOR FIJO ADICIONADO AL CONTRATO M -0076/11.
+
+
+
+
+
+  
+    
+Valor: 39269000.00
+Iva: 16.0
+Observaciones: 
+Estado Factura: 2
+Fecha Actualizacion: 2011-12-07 08:33:10

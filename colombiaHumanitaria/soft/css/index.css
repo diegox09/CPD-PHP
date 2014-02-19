@@ -1,0 +1,69 @@
+/*generico*/
+body{background:#F5F5F5;color:#333;font-family:Verdana, Geneva, sans-serif;font-size:13px;margin:0;padding:0}
+a,a:hover{color:#15c;text-decoration:none;cursor:pointer}
+input[type="text"], input[type="password"]{border:1px solid #d5d5d5;padding:3px 5px;width:94%;color:#000}
+input[type="file"]{border:1px solid #d5d5d5;padding:3px 5px;height:25px}
+input[type="submit"], input[type="reset"], input[type="button"]{height:35px;font-weight:bold;padding:4px 8px;border-radius:2px;cursor:pointer}
+input:focus, select:focus, textarea:focus{background:#FFFFF0;border:1px solid #efe1ac}
+input[readonly], select[readonly] ,textarea[readonly]{background:#F5F5F5;border:1px solid #d5d5d5}
+select{border:1px solid #d5d5d5;padding:2px 5px;width:98%;color:#000}
+select option{padding:2px}
+textarea{border:1px solid #d5d5d5;height:50px;padding:3px 5px;resize:none;width:198%;color:red}
+label{font-weight:bold;font-size:12px}
+
+.boton_azul{background:#4d90fe;color:#fff;border:1px solid #3079ed;}
+.boton_azul:hover, .boton_azul:focus{background:#357ae8;color:#fff;border:1px solid #2f5bb7}
+
+.boton_naranja{background:#d14836;color:#fff;border:1px solid #d14836}
+.boton_naranja:hover, .boton_naranja:focus{background:#c53727;color:#fff;border:1px solid #b0281a}
+
+.boton_gris{background:#f5f5f5;color:#666;border:1px solid #dcdcdc}
+.boton_gris:hover, .boton_gris:focus{background:#f8f8f8;color:#222;border:1px solid #c6c6c6}
+
+.boton_gris:disabled{background:#e5e5e5;color:#ccc;border:1px solid #dcdcdc}
+
+.input_c{width:60%!important}
+.input_n{width:100%!important}
+.input_l{width:198%!important}
+.input_buscar{width:300px!important;padding:8px 10px!important;font-size:14px;margin:8px 5px}
+.select_c{width:20%!important}
+.input_error{border:1px solid #d14836!important}
+.clear{clear:both}
+.center{text-align:center}
+/*index.html*/
+#cargando{width:100%;position:fixed;text-align:center;top:4px;z-index:10}
+#cargando span{font-size:12px;font-weight:bold;background:#f9edbe;border-left:1px solid #efe1ac;border-right:1px solid #efe1ac;border-bottom:1px solid #efe1ac;border-radius:0 0 5px 5px;padding:5px 10px}
+#header{width:100%;min-width:800px;position:relative;font-size:25px;font-weight:bold;text-align:center;background:#e5e5e5;border-bottom:1px solid #d5d5d5;margin:auto;padding:5px 0 0 0}
+#nombre_user{color:#383838;font-size:12px;position:absolute;top:5px;left:8px}
+#salir{color:#383838;font-size:12px;position:absolute;top:5px;right:8px}
+#salir:hover{color:#c53727}
+#contenido{width:1002px;overflow:auto;margin:auto}
+#espacio{height:30px}
+#footer{width:100%;min-width:800px;height:30px;position:fixed;bottom:0;left:0;background:#e5e5e5;border-top:1px solid #d5d5d5;margin:auto}
+#footer div{padding:6px}
+#footer a{color:#383838}
+#footer a:hover{color:#a5a5a5}
+#error{font-size:12px;font-weight:bold;position:fixed;bottom:0;right:0;background:#f9edbe;border-left:1px solid #efe1ac;border-top:1px solid #efe1ac;border-radius:5px 0 0 0;padding:5px 10px;z-index:3}
+
+.info{float:left}
+.formulario{width:490px;background:#F0F8FF;border:1px solid #d5d5d5;border-radius:3px;margin:4px} 
+.formulario form div{width:235px;margin:5px;float:left}
+.header_info{font-size:12px;font-weight:bold;padding:10px 0;text-align:center;background-color:#e5e5e5;border-bottom:1px solid #d5d5d5;width:100%!important;margin:0px!important}
+.header_info a{color:#383838}
+.header_info a:hover{color:#c53727}
+.label_l{clear:both;width:470px!important}
+
+#resultados{width:990px;margin:auto}
+table{font-family:arial;width:100%;border-radius:2px}
+table thead tr th{background:#e5e5e5;border:1px solid #d5d5d5;padding:4px}
+table tbody tr td{border-left:1px solid #d5d5d5;border-right:1px solid #d5d5d5;border-bottom:1px solid #d5d5d5;color:#333;padding:4px}
+.cargar_damnificado:hover{font-weight:bold;background:#FFFFF0;cursor:pointer}
+#actualizar{background:url(../img/reload_g.png) no-repeat;padding:2px}
+#actualizar:hover, #actualizar:focus{background:url(../img/reload_c.png) no-repeat}
+
+.fraude{background:#F00;color:#FFF}
+.error{color:#F00}
+.insert{color:#15c}
+
+.informes{margin:5px}
+#resumen{margin:10px}

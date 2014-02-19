@@ -1,0 +1,16 @@
+Id Factura: 66
+Numero Factura: 1808
+Ciudad: CÚCUTA
+Fecha: 2012-02-13
+Id Cliente: 7
+Nit Cliente: 804.003.003-2
+Nombre Cliente: CORPRODINCO
+
+Telefono Cliente: 
+Direccion Cliente: 
+Descripcion: 1.
+Valor: 0.00
+Iva: 16.0
+Observaciones: 
+Estado Factura: 1
+Fecha Actualizacion: 2012-02-13 22:31:24

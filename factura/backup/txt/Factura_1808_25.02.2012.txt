@@ -1,0 +1,15 @@
+Id Factura: 66
+Numero Factura: 1808
+Ciudad: CÚCUTA
+Fecha: 2012-02-24
+Id Cliente: 12
+Nit Cliente: 807.000.949-1
+Nombre Cliente: COOPERATIVA MULTIACTIVA GUASIMALES
+Telefono Cliente: 5831399
+Direccion Cliente: CALLE 11 NO.4-74 OFICINA 401
+Descripcion: SUMINISTRO DE 26.673 BLOQUES  SEGUN CONVENIO SUSCRITO ENTRE LA ANDI - FUNDACION CEMEX Y CORPRODINCO COM-010-2010.
+Valor: 29340300.00
+Iva: 0.0
+Observaciones: 
+Estado Factura: 1
+Fecha Actualizacion: 2012-02-25 12:54:05

@@ -1,0 +1,18 @@
+Id Factura: 82
+Numero Factura: 1824
+Ciudad: CÚCUTA
+Fecha: 2012-04-25
+Id Cliente: 7
+Nit Cliente: 804.003.003-2
+Nombre Cliente: CORPRODINCO
+
+Telefono Cliente: 5723422
+
+
+Direccion Cliente: 
+Descripcion: 
+Valor: 0.00
+Iva: 16.0
+Observaciones: 
+Estado Factura: 1
+Fecha Actualizacion: 2012-04-25 16:16:46

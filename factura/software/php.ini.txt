@@ -1,0 +1,31 @@
+//php.ini
+display_errors = Off
+error_reporting = E_ALL & ~E_NOTICE 
+
+//wamp
+C:\wamp\bin\php\php5.3.5
+C:\wamp\bin\apache\Apache2.2.17\bin
+
+//xampp
+C:\xampp\php
+
+
+
+//autoiniciar
+Ir a Inicio> Ejecutar> escriba "services.msc" y pulse ENTER
+//wamp
+wampapache
+wampmysql 
+
+//xampp
+Apache2.2
+mysql
+
+
+
+//mysqldump
+//wamp
+exec('C:\wamp\bin\mysql\mysql5.5.8\bin\mysqldump --opt --host=localhost --user=root --password=sputnik factura > '.$archivo);
+
+//xampp
+exec('C:\xampp\mysql\bin\mysqldump --opt --host=localhost --user=root --password=sputnik factura > '.$archivo);
