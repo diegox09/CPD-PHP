@@ -142,6 +142,19 @@
 		document.title = 'Factura '+respuesta.numeroFactura;		
 		$('#fecha').attr('value', respuesta.fecha);
 		$.fn.fecha();
+
+		//Cambio Resolucion Dian
+		if(Date.parse(respuesta.fecha) < Date.parse("2014-02-18"))			
+			$('.resolucion_dian').html('Somos Grandes Contribuyentes Según Resolución DIAN No. 014047<br>de Diciembre 23 de 2009<br>');
+		else
+			$('.resolucion_dian').html('No Somos Grandes Contribuyentes Según Resolución DIAN No. 041<br>de Enero 30 de 2014<br>');
+		
+		//Cambio Resolucion Facturacion
+		if(Date.parse(respuesta.fecha) < Date.parse("2012-07-31"))
+			$('.resolucion_facturacion').html('Resolución de facturación por computador<br>No. 070000083145 de Fecha 15 de Julio de 2010<br>de la 1501 a la 2000.');
+		else
+			$('.resolucion_facturacion').html('Resolución de facturación por computador<br>No. 070000098682 de Fecha 31 de Julio de<br>2012 de la 1849 a la 2300.');
+		
 		//Original		
 		$('#numero_factura').attr('value', respuesta.numeroFactura);		
 		$('#ciudad').attr('value', respuesta.ciudad);						
