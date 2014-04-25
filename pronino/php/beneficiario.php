@@ -25,7 +25,7 @@
 		$direccion = utf8_decode($_GET['direccion']);
 		$idMunicipio = $_GET['id_municipio'];
 		$idBarrio = $_GET['id_barrio'];
-		
+				
 		$idUser = $_SESSION['id_pn'];
 		date_default_timezone_set('America/Bogota'); 
 		$fechaActual = date('Y-m-d H:i:s');

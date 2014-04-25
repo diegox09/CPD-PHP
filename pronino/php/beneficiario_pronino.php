@@ -28,6 +28,10 @@
 		$razonRetiro = $_GET['razon_retiro'];
 		$razonEgresado = $_GET['razon_egresado'];
 		$razonBaja = $_GET['razon_baja'];
+		//Modificacion
+		$grupoEtnico = $_GET['grupo_etnico'];
+		$tipologiaFamiliar = $_GET['tipologia_familiar'];
+		$parentescoAcudiente = $_GET['parentesco_acudiente'];
 		
 		$idUser = $_SESSION['id_pn'];
 		date_default_timezone_set('America/Bogota'); 
@@ -36,7 +40,7 @@
 		switch($opc){				
 			case 'cargar':	$result = Pronino::getInstance()->get_beneficiario_pronino_by_id($idBeneficiario);								
 							break;			
-			case 'guardar':	$consulta = Pronino::getInstance()->update_beneficiario_pronino($idBeneficiario, $item, $tallaUniforme, $tallaZapato, $sisben, $idArs, $idUsuario1, $idUsuario2, $fechaIngreso, $estado, $fechaRetiro, $razonRetiro, $idUser, $fechaActual, $razonEgresado, $razonBaja);
+			case 'guardar':	$consulta = Pronino::getInstance()->update_beneficiario_pronino($idBeneficiario, $item, $tallaUniforme, $tallaZapato, $sisben, $idArs, $idUsuario1, $idUsuario2, $fechaIngreso, $estado, $fechaRetiro, $razonRetiro, $idUser, $fechaActual, $razonEgresado, $razonBaja, $grupoEtnico, $tipologiaFamiliar, $parentescoAcudiente);
 							$result = Pronino::getInstance()->get_beneficiario_pronino_by_id($idBeneficiario);								
 							break;										
 			default:		$result = false;
@@ -70,8 +74,12 @@
 				$respuesta['razonRetiro'] = $beneficiario['razonRetiro'];
 				$respuesta['razonEgresado'] = $beneficiario['razonEgresado'];
 				$respuesta['razonBaja'] = $beneficiario['razonBaja'];
-				$respuesta['fechaActualizacion'] = $beneficiario['fechaActualizacion'];					
+				$respuesta['fechaActualizacion'] = $beneficiario['fechaActualizacion'];	
 				$idUser = $beneficiario['idUser'];
+				//Modificacion
+				$respuesta['grupoEtnico'] = $beneficiario['grupoEtnico'];
+				$respuesta['tipologiaFamiliar'] = $beneficiario['tipologiaFamiliar'];
+				$respuesta['parentescoAcudiente'] = $beneficiario['parentescoAcudiente'];
 				
 				$usuario = mysqli_fetch_array(Pronino::getInstance()->get_user_by_id($idUser));					
 				$respuesta['nombreUser'] = htmlentities($usuario['user']);											

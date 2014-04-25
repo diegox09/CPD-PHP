@@ -44,7 +44,7 @@
 	<div id="info"> 
     	<div id="menu" style="display:none">
         	<ul id="lista">
-            	<li><a href="#" class="lista" label="actividad">Actividad Laboral</a></li>           	
+            	<li style="display:none"><a href="#" class="lista" label="actividad">Actividad Laboral</a></li>           	
                 <li><a href="#" class="lista" label="ars">Ars</a></li>
                 <li id="li_asignar" style="display:none"><a href="#" class="lista" label="asignar">Asignar Usuarios</a></li>
                 <li><a href="#" class="lista" label="passwd">Cambiar Contraseña</a></li>
@@ -70,7 +70,7 @@
                 <li><a href="#" class="lista" label="escuela">Escuela Formacion</a></li>
                 <li id="li_exportar" style="display:none"><a href="#" class="lista" label="exportar">Exportar Excel</a></li>	
                 <li id="li_importar" style="display:none"><a href="#" class="lista" label="importar">Importar Excel</a></li>
-                <li><a href="#" class="lista" label="sitio">Sitio Trabajo</a></li>
+                <li style="display:none"><a href="#" class="lista" label="sitio">Sitio Trabajo</a></li>
                 <li id="li_usuario" style="display:none"><a href="#" class="lista" label="usuario">Usuario</a></li>
             </ul>
         </div>

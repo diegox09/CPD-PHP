@@ -26,12 +26,17 @@
 		$nombres = strtoupper(utf8_decode($_GET['persona_natural']));
 		$telefono = $_GET['telefono'];
 		$direccion = strtoupper(utf8_decode($_GET['direccion_persona']));		
-		$descripcion = strtoupper(utf8_decode($_GET['descripcion']));
-		$valor = $_GET['total'];
-		$valor = strtr($valor, $quitar);
+		//$descripcion = strtoupper(nl2br(htmlentities(str_replace("<BR />", "", $_GET['descripcion']),ENT_NOQUOTES,'UTF-8')));
+		$descripcion = strtoupper(nl2br(utf8_decode(str_replace("<BR />", "", $_GET['descripcion']))));
+		$valor = strtr($_GET['total'], $quitar);
 		$tarifaIva = $_GET['tarifa_iva'];
 		$observaciones = strtoupper(utf8_decode($_GET['observaciones']));
-		
+		//Actualizacion
+		$descripcionValor = nl2br(str_replace("<BR />", "", $_GET['descripcion_valor']));
+		$subtotal = strtr($_GET['subtotal_factura'], $quitar);
+		$valorIva = strtr($_GET['iva_factura'], $quitar);
+		$facturaManual = $_GET['factura_manual'];
+				
 		$idUser = $_SESSION['id_f'];
 		$idEstadoFactura = $_GET['estado_factura'];
 		if($idEstadoFactura != '2')
@@ -41,8 +46,10 @@
 		
 		if($idCliente != '')
 			$consulta = Cliente::getInstance()->update_cliente($idCliente, $nit, $nombres, $telefono, $direccion);
-		else
-			$consulta = Cliente::getInstance()->insert_nit_cliente($nit);										
+		else{
+			if($nit != '')
+				$consulta = Cliente::getInstance()->insert_nit_cliente($nit);										
+		}
 		
 		$cliente = mysqli_fetch_array(Cliente::getInstance()->get_cliente_by_nit($nit));
 		$idCliente = $cliente['idCliente'];
@@ -60,12 +67,12 @@
 			}
 			
 			if(!$error)			
-				$consulta = Factura::getInstance()->insert_factura($numeroFactura, $ciudad, $fecha, $fechaActual, $idCliente, $nit, $nombres, $telefono, $direccion, $idUser, $idEstadoFactura, $descripcion, $valor, $tarifaIva, $observaciones);
+				$consulta = Factura::getInstance()->insert_factura($numeroFactura, $ciudad, $fecha, $fechaActual, $idCliente, $nit, $nombres, $telefono, $direccion, $idUser, $idEstadoFactura, $descripcion, $valor, $tarifaIva, $observaciones, $descripcionValor, $subtotal, $valorIva, $facturaManual);
 			else
 				$consulta = false;	
 		}	
 		else{
-			$consulta = Factura::getInstance()->update_factura($numeroFactura, $ciudad, $fecha, $fechaActual, $idCliente, $nit, $nombres, $telefono, $direccion, $idUser, $idEstadoFactura, $descripcion, $valor, $tarifaIva, $observaciones);
+			$consulta = Factura::getInstance()->update_factura($numeroFactura, $ciudad, $fecha, $fechaActual, $idCliente, $nit, $nombres, $telefono, $direccion, $idUser, $idEstadoFactura, $descripcion, $valor, $tarifaIva, $observaciones, $descripcionValor, $subtotal, $valorIva, $facturaManual);
 		}
 		
 		if($consulta){
@@ -83,6 +90,7 @@
 				$nombreCliente = utf8_encode($factura['nombres']);
 				$telefonoCliente = $factura['telefono'];
 				$direccionCliente = utf8_encode($factura['direccion']);
+				//$descripcion = html_entity_decode($factura['descripcion'],ENT_NOQUOTES,'UTF-8');
 				$descripcion = utf8_encode($factura['descripcion']);
 				$valor = $factura['valor'];
 				$tarifaIva = $factura['tarifaIva'];
@@ -90,6 +98,11 @@
 				$estadoFactura = $factura['idEstadoFactura'];						
 				$fechaActualizacion = $factura['fechaActualizacion'];
 				$idUser = $factura['idUser'];	
+
+				$descripcionValor = $factura['descripcionValor'];
+				$subtotal = $factura['subtotal'];
+				$valorIva = $factura['valorIva'];
+				$facturaManual = $factura['facturaManual'];
 				
 				$respuesta['numeroFactura'] = $numeroFactura;
 				$respuesta['ciudad'] = $ciudad;
@@ -105,7 +118,13 @@
 				$respuesta['observaciones'] = $observaciones;
 				$respuesta['estadoFactura'] = $estadoFactura;
 				$respuesta['fechaActualizacion'] = $fechaActualizacion;
+
+				$respuesta['descripcionValor'] = $descripcionValor;
+				$respuesta['subtotal'] = $subtotal;
+				$respuesta['valorIva'] = $valorIva;
+				$respuesta['facturaManual'] = $facturaManual;
 				
+				/*
 				//Factura txt
 				#Abrimos el fichero en modo de escritura 
 				$fechaFichero = date('_d.m.Y');
@@ -128,7 +147,8 @@
 				fputs($fichero,'Fecha Actualizacion: '.$fechaActualizacion.chr(13).chr(10));
 				#Cerramos el fichero 
 				fclose($fichero);				
-								
+				*/
+
 				$result = User::getInstance()->get_user_by_id($idUser);				
 				$user = mysqli_fetch_array($result);
 				$respuesta['nombreUser'] = utf8_encode($user['nombre']);

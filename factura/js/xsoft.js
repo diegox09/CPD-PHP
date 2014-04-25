@@ -70,7 +70,11 @@
 		$('#descripcion').attr('value', '');		
 		$('#observaciones').attr('value', '');	
 		$('#tarifa_iva').attr('value', '16');	
-		$('#total_factura').attr('value', '');		
+		$('#total_factura').attr('value', '');
+		//Actualizacion
+		$('#descripcion_valor').attr('value', '');	
+		$('#subtotal_factura').attr('value', '');	
+		$('#iva_factura').attr('value', '');		
 		//Original
 		$('#original_numero_factura').attr('value', '');
 		$('#original_ciudad').attr('value', '');	
@@ -102,6 +106,7 @@
 		//$.fn.subtotal();		
 		$('#estado_factura').removeAttr('checked');
 		$('#modificar_factura').removeAttr('checked');
+		$('#factura_manual').removeAttr('checked');
 		$('.anulada').hide();
 		$('#nombre_user').html('');
     }
@@ -166,7 +171,12 @@
 		$('#descripcion').attr('value', respuesta.descripcion);			
 		$('#observaciones').attr('value', respuesta.observaciones);			
 		$('#tarifa_iva').attr('value', respuesta.tarifaIva);
-		$('#total_factura').attr('value', respuesta.valor);		
+		$('#total_factura').attr('value', respuesta.valor);
+
+		$('#descripcion_valor').attr('value', respuesta.descripcionValor);
+		$('#subtotal_factura').attr('value', respuesta.subtotal);
+		$('#iva_factura').attr('value', respuesta.valorIva);
+
 		//Original
 		$('#original_numero_factura').attr('value', respuesta.numeroFactura);				
 		$('#original_ciudad').attr('value', respuesta.ciudad);
@@ -175,7 +185,8 @@
 		$('#original_direccion_persona').attr('value', respuesta.direccionCliente);										
 		$('#original_telefono').attr('value', respuesta.telefonoCliente);
 		$('#original_descripcion').html($('#descripcion').attr('value'));		
-		$('#original_observaciones').attr('value', respuesta.observaciones);	
+		$('#original_observaciones').attr('value', respuesta.observaciones);
+								
 		//Copia
 		$('#copia_numero_factura').attr('value', respuesta.numeroFactura);				
 		$('#copia_ciudad').attr('value', respuesta.ciudad);
@@ -185,6 +196,7 @@
 		$('#copia_telefono').attr('value', respuesta.telefonoCliente);
 		$('#copia_descripcion').html($('#descripcion').attr('value'));		
 		$('#copia_observaciones').attr('value', respuesta.observaciones);
+						
 		//Copia2
 		$('#copia2_numero_factura').attr('value', respuesta.numeroFactura);				
 		$('#copia2_ciudad').attr('value', respuesta.ciudad);
@@ -193,10 +205,16 @@
 		$('#copia2_direccion_persona').attr('value', respuesta.direccionCliente);										
 		$('#copia2_telefono').attr('value', respuesta.telefonoCliente);
 		$('#copia2_descripcion').html($('#descripcion').attr('value'));		
-		$('#copia2_observaciones').attr('value', respuesta.observaciones);			
+		$('#copia2_observaciones').attr('value', respuesta.observaciones);
+							
+		if(respuesta.facturaManual == '2')
+			$('#factura_manual').attr('checked', true);
+		else
+			$('#factura_manual').removeAttr('checked');
 		
 		$.fn.subtotal();
-		if(respuesta.estadoFactura == '2'){						
+
+		if(respuesta.estadoFactura == '2'){								
 			$('#estado_factura').attr('checked', true);
 			$('.anulada').show();
 		}
@@ -265,48 +283,77 @@
 })(jQuery);	
 
 (function($){
-    $.fn.subtotal=function(){
-		var subtotal, iva, valor_iva, longitud, total;
-		$('#total_factura').priceFormat();
-		total = $('#total_factura').attr('value')
-       	total = total.replace(/[$ ,]/gi,'');
-		total = parseFloat(total);		
-		$('#calcular_subtotal').attr('value', total.toFixed(2));
-		$('#calcular_subtotal').priceFormat();		
-		$('#original_total_factura').html($('#calcular_subtotal').attr('value'));	
-		$('#copia_total_factura').html($('#calcular_subtotal').attr('value'));	
-		$('#copia2_total_factura').html($('#calcular_subtotal').attr('value'));				
-		
-		var iva = $('#tarifa_iva').attr('value');
-		if(iva == '')
-			iva = '0';			
-		if (/^([0-9])*[.]?[0-9]*$/.test(iva)){	
-			iva = (parseInt(iva)+100) / 100;						
-			subtotal = parseFloat(total / iva);			
-			$('#calcular_subtotal').attr('value', subtotal.toFixed(2));
-			$('#calcular_subtotal').priceFormat();	
-			$('#valor').html($('#calcular_subtotal').attr('value'));			
-			$('#original_valor').html($('#calcular_subtotal').attr('value'));		
-			$('#copia_valor').html($('#calcular_subtotal').attr('value'));		
-			$('#copia2_valor').html($('#calcular_subtotal').attr('value'));			
-			$('#subtotal_factura').html($('#calcular_subtotal').attr('value'));			
-			$('#original_subtotal_factura').html($('#calcular_subtotal').attr('value'));
-			$('#copia_subtotal_factura').html($('#calcular_subtotal').attr('value'));
-			$('#copia2_subtotal_factura').html($('#calcular_subtotal').attr('value'));
+    $.fn.subtotal=function(){    	    	
+    	if(!$('#factura_manual').is(':checked')){
+			var subtotal, iva, valor_iva, longitud, total;
+			
+			$('#total_factura').priceFormat();
+			total = $('#total_factura').attr('value')
+	       	total = total.replace(/[$ ,]/gi,'');
+			total = parseFloat(total);		
+			$('#calcular_subtotal').attr('value', total.toFixed(2));
+			$('#calcular_subtotal').priceFormat();
+
+			$('#original_total_factura').html($('#calcular_subtotal').attr('value'));	
+			$('#copia_total_factura').html($('#calcular_subtotal').attr('value'));	
+			$('#copia2_total_factura').html($('#calcular_subtotal').attr('value'));				
+			
+			var iva = $('#tarifa_iva').attr('value');
+			if(iva == '')
+				iva = '0';			
+			if (/^([0-9])*[.]?[0-9]*$/.test(iva)){	
+				iva = (parseInt(iva)+100) / 100;						
+				subtotal = parseFloat(total / iva);			
+				$('#calcular_subtotal').attr('value', subtotal.toFixed(2));
+				$('#calcular_subtotal').priceFormat();	
+				//$('#valor').html($('#calcular_subtotal').attr('value'));			
+				$('#descripcion_valor').attr('value', $('#calcular_subtotal').attr('value'));
+				$('#original_valor').html($('#calcular_subtotal').attr('value'));		
+				$('#copia_valor').html($('#calcular_subtotal').attr('value'));		
+				$('#copia2_valor').html($('#calcular_subtotal').attr('value'));
+
+				//$('#subtotal_factura').html($('#calcular_subtotal').attr('value'));
+				$('#subtotal_factura').attr('value', $('#calcular_subtotal').attr('value'));
+				$('#original_subtotal_factura').html($('#calcular_subtotal').attr('value'));
+				$('#copia_subtotal_factura').html($('#calcular_subtotal').attr('value'));
+				$('#copia2_subtotal_factura').html($('#calcular_subtotal').attr('value'));
+			}
+			else{
+				longitud = iva.length-1;
+				iva = iva.substring(0,longitud);	
+				$('#tarifa_iva').attr('value', iva);
+			}		
+					
+			valor_iva = parseFloat(total - subtotal);
+			$('#calcular_subtotal').attr('value', valor_iva.toFixed(2));
+			$('#calcular_subtotal').priceFormat();
+
+			//$('#iva_factura').html($('#calcular_subtotal').attr('value'));			
+			$('#iva_factura').attr('value', $('#calcular_subtotal').attr('value'));
+			$('#original_iva_factura').html($('#calcular_subtotal').attr('value'));
+			$('#copia_iva_factura').html($('#calcular_subtotal').attr('value'));
+			$('#copia2_iva_factura').html($('#calcular_subtotal').attr('value'));
 		}
 		else{
-			longitud = iva.length-1;
-			iva = iva.substring(0,longitud);	
-			$('#tarifa_iva').attr('value', iva);
-		}		
-				
-		valor_iva = parseFloat(total - subtotal);
-		$('#calcular_subtotal').attr('value', valor_iva.toFixed(2));
-		$('#calcular_subtotal').priceFormat();
-		$('#iva_factura').html($('#calcular_subtotal').attr('value'));			
-		$('#original_iva_factura').html($('#calcular_subtotal').attr('value'));
-		$('#copia_iva_factura').html($('#calcular_subtotal').attr('value'));
-		$('#copia2_iva_factura').html($('#calcular_subtotal').attr('value'));			
+			$('#total_factura').priceFormat();
+			$('#original_total_factura').html($('#total_factura').attr('value'));	
+			$('#copia_total_factura').html($('#total_factura').attr('value'));	
+			$('#copia2_total_factura').html($('#total_factura').attr('value'));
+
+			$('#original_valor').html($('#descripcion_valor').attr('value'));		
+			$('#copia_valor').html($('#descripcion_valor').attr('value'));		
+			$('#copia2_valor').html($('#descripcion_valor').attr('value'));
+
+			$('#subtotal_factura').priceFormat();
+			$('#original_subtotal_factura').html($('#subtotal_factura').attr('value'));
+			$('#copia_subtotal_factura').html($('#subtotal_factura').attr('value'));
+			$('#copia2_subtotal_factura').html($('#subtotal_factura').attr('value'));
+
+			$('#iva_factura').priceFormat();
+			$('#original_iva_factura').html($('#iva_factura').attr('value'));
+			$('#copia_iva_factura').html($('#iva_factura').attr('value'));
+			$('#copia2_iva_factura').html($('#iva_factura').attr('value'));
+		}							
     }
 })(jQuery);
 
@@ -792,5 +839,5 @@ $(document).ready(function(){
 			$('.calendario').css('display', 'none');
 		}
 	});	
-	
+
 });

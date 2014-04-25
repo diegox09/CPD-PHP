@@ -107,16 +107,16 @@
                 <div><div id="ultima_factura" ></div></div>
                 <div id="nombre_factura"></div>
                 <form id="guardar_factura" action="#" method="get"> 
-                    <strong>Imprimir (Ctrl + P)</strong><br /><br />  
+                    <strong>Imprimir (Ctrl + P) </strong><br /><br />                     
                     <label for="imprimir_factura_o"> Original</label>
                     <input type="checkbox" id="imprimir_factura_o" checked />&nbsp;&nbsp;&nbsp;&nbsp; 
                     <label for="imprimir_factura_c1"> Copia 1</label>
                     <input type="checkbox" id="imprimir_factura_c1" checked />&nbsp;&nbsp;&nbsp;&nbsp;                 
                     <label for="imprimir_factura_c2"> Copia 2</label>
                     <input type="checkbox" id="imprimir_factura_c2" />
-                    
+
                     <input type="submit" id="guardar" name="Submit" value="Guardar" />
-                    <input type="reset" id="cancelar" value="Cancelar" />                      
+                    <input type="reset" id="cancelar" value="Cancelar" />                                       
                 </form>
                 <div id="mostrar_r">+ Buscar Factura</div> 
                 <form id="buscar_nombre" action="#" method="get">
@@ -220,22 +220,33 @@
                                     <div class="anulada" style="display:none">ANULADA</div>
                                     <tr class="alto">                                   
                                         <td colspan="2">
-                                            <textarea id="descripcion" class="input_d" name="descripcion"></textarea>                                        </td>                                   
+                                            <textarea id="descripcion" class="input_d" name="descripcion"></textarea>
+                                        </td>                                   
                                         <td>
-                                        	<div id="valor" class="mostrar_v"></div>                                        	
+                                            <!--
+                                        	<div id="valor" class="mostrar_v"></div>
+                                            -->
+                                            <textarea id="descripcion_valor" class="input_v" name="descripcion_valor"></textarea>                                        	
                                       	</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">	
                                             <div class="anular_factura">
                                                 <label for="estado_factura">Anular Factura:</label>
-                                                <input type="checkbox" id="estado_factura" name="estado_factura" value="2" />             	                     	</div> 
+                                                <input type="checkbox" id="estado_factura" name="estado_factura" value="2" />
+                                            </div> 
                                             <div class="anular_factura">
-                                                <label for="modificar_factura">Modificar Factura:</label>
-                                                <input type="checkbox" id="modificar_factura" name="modificar_factura" value="2" />             	                     	</div>  
+                                                <label for="modificar_factura">Mod. Factura:</label>
+                                                <input type="checkbox" id="modificar_factura" name="modificar_factura" value="2" />
+                                            </div>
+                                            <div class="anular_factura">
+                                                <label for="factura_manual">Manual:</label>
+                                                <input type="checkbox" id="factura_manual" name="factura_manual" value="2" />
+                                            </div>  
                                             <div class="anular_factura">
                                                 <label for="iva">Iva:</label>
-                                                <input type="text" id="tarifa_iva" name="tarifa_iva" class="input_iva" value="" maxlength="3" />%             	                     	</div>     
+                                                <input type="text" id="tarifa_iva" name="tarifa_iva" class="input_iva" value="" maxlength="3" />%
+                                            </div>     
                                         </td>
                                         <td>
                                         </td>         
@@ -249,7 +260,12 @@
                                             <textarea id="observaciones" class="input" name="observaciones" ></textarea>
                                         </th>
                                         <th width="10%" class="center">Sub-Total</th>
-                                        <td width="20%" id="subtotal_factura" class="subtotal"></td>
+                                        <!--
+                                        <td width="20%" id="subtotal_factura" class="subtotal">
+                                        -->
+                                        <td class="subtotal">
+                                            <input type="text" id="subtotal_factura" class="input_s" name="subtotal_factura" value="" maxlength="20"/>    
+                                        </td>
                                     </tr>                               
                                     <tr class="firma_representante">                                	
                                         <th class="border_top">
@@ -257,7 +273,12 @@
                                             &nbsp;Firma y Sello del Representante Legal o Encargado
                                         </th>
                                         <th class="center">I.V.A.</th>
-                                        <td id="iva_factura" class="subtotal"></td>
+                                        <!--
+                                        <td id="iva_factura" class="subtotal">
+                                        -->
+                                        <td class="subtotal">
+                                            <input type="text" id="iva_factura" class="input_s" name="iva_factura" value="" maxlength="20"/>    
+                                        </td>
                                     </tr>
                                     <tr class="abajo">
                                         <th class="border_bottom">
@@ -265,7 +286,9 @@
                                             <div class="espacio_semi"></div>
                                         </th>
                                         <th class="center">TOTAL</th>
-                                        <td class="subtotal"><input type="text" id="total_factura" class="input_s" name="total" value="" maxlength="20"/></td>
+                                        <td class="subtotal">
+                                            <input type="text" id="total_factura" class="input_s" name="total" value="" maxlength="20"/>
+                                        </td>
                                     </tr>
                                 </tfoot> 	                        
                             </table>            

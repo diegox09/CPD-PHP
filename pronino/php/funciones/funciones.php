@@ -1,4 +1,4 @@
-<?
+<?php
 // bd2local
 // =FECHANUMERO("")
 function implota($fecha){

@@ -47,6 +47,17 @@
 		$grado = $_GET['grado'];
 		$seccion = $_GET['seccion'];
 		$jornada = $_GET['jornada'];
+		//Modificacion
+		$actualmenteTrabaja = $_GET['actualmente_trabaja'];
+		$problemaSalud = $_GET['problema_salud'];
+		$ingresosMes = $_GET['ingresos_mes'];
+		$gastaIngresos = $_GET['gasta_ingresos'];
+		$ingresosPercibidos = $_GET['ingresos_percibidos'];
+		$porqueTrabaja = $_GET['porque_trabaja'];
+		$situacionEspecial = $_GET['situacion_especial'];
+		$folioUnidos = $_GET['folio_unidos'];
+		$escolarizado = $_GET['escolarizado'];
+		$ciclo = $_GET['ciclo'];
 		
 		$idUser = $_SESSION['id_pn'];
 		date_default_timezone_set('America/Bogota'); 
@@ -64,9 +75,9 @@
 							break;										
 			case 'guardar':	$result = Pronino::getInstance()->get_beneficiario_year($idBeneficiario, $year);
 							if(mysqli_num_rows($result) == 0)
-								$consulta = Pronino::getInstance()->insert_beneficiario_year($idBeneficiario, $year, $sitioTrabajo, $actividadLaboral, $actividadEspecifica, $observaciones, $idMunicipio, $idColegio, $idSedeColegio, $grado, $jornada, $escuelaFormacion1, $escuelaFormacion2, $desplazados, $juntos, $familiasAccion, $comedorInfantil, $kitEscolar, $uniforme, $zapatos, $visitaDomiciliaria, $visitaPsicosocial, $visitaAcademica, $intervencionPsicologica, $valoracionMedica, $valoracionOdontologica, $idUser, $fechaActual, $seccion, $kitNutricional, $visitaSeguimiento);
+								$consulta = Pronino::getInstance()->insert_beneficiario_year($idBeneficiario, $year, $sitioTrabajo, $actividadLaboral, $actividadEspecifica, $observaciones, $idMunicipio, $idColegio, $idSedeColegio, $grado, $jornada, $escuelaFormacion1, $escuelaFormacion2, $desplazados, $juntos, $familiasAccion, $comedorInfantil, $kitEscolar, $uniforme, $zapatos, $visitaDomiciliaria, $visitaPsicosocial, $visitaAcademica, $intervencionPsicologica, $valoracionMedica, $valoracionOdontologica, $idUser, $fechaActual, $seccion, $kitNutricional, $visitaSeguimiento, $actualmenteTrabaja, $problemaSalud, $ingresosMes, $gastaIngresos, $ingresosPercibidos, $porqueTrabaja, $situacionEspecial, $folioUnidos, $escolarizado, $ciclo);
 							else
-								$consulta = Pronino::getInstance()->update_beneficiario_year($idBeneficiario, $year, $sitioTrabajo, $actividadLaboral, $actividadEspecifica, $observaciones, $idMunicipio, $idColegio, $idSedeColegio, $grado, $jornada, $escuelaFormacion1, $escuelaFormacion2, $desplazados, $juntos, $familiasAccion, $comedorInfantil, $kitEscolar, $uniforme, $zapatos, $visitaDomiciliaria, $visitaPsicosocial, $visitaAcademica, $intervencionPsicologica, $valoracionMedica, $valoracionOdontologica, $idUser, $fechaActual, $seccion, $kitNutricional, $visitaSeguimiento);								
+								$consulta = Pronino::getInstance()->update_beneficiario_year($idBeneficiario, $year, $sitioTrabajo, $actividadLaboral, $actividadEspecifica, $observaciones, $idMunicipio, $idColegio, $idSedeColegio, $grado, $jornada, $escuelaFormacion1, $escuelaFormacion2, $desplazados, $juntos, $familiasAccion, $comedorInfantil, $kitEscolar, $uniforme, $zapatos, $visitaDomiciliaria, $visitaPsicosocial, $visitaAcademica, $intervencionPsicologica, $valoracionMedica, $valoracionOdontologica, $idUser, $fechaActual, $seccion, $kitNutricional, $visitaSeguimiento, $actualmenteTrabaja, $problemaSalud, $ingresosMes, $gastaIngresos, $ingresosPercibidos, $porqueTrabaja, $situacionEspecial, $folioUnidos, $escolarizado, $ciclo);								
 							$result = Pronino::getInstance()->get_beneficiario_year($idBeneficiario, $year);								
 							break;										
 			default:		$result = false;
@@ -107,7 +118,18 @@
 				$respuesta['grado'] = $programa['grado'];
 				$respuesta['seccion'] = $programa['seccion'];
 				$respuesta['jornada'] = $programa['jornada'];
-				
+				//Modificacion
+				$respuesta['actualmenteTrabaja'] = $programa['actualmenteTrabaja'];
+				$respuesta['problemaSalud'] = $programa['problemaSalud'];
+				$respuesta['ingresosMes'] = $programa['ingresosMes'];
+				$respuesta['gastaIngresos'] = $programa['gastaIngresos'];
+				$respuesta['ingresosPercibidos'] = $programa['ingresosPercibidos'];
+				$respuesta['porqueTrabaja'] = $programa['porqueTrabaja'];
+				$respuesta['situacionEspecial'] = $programa['situacionEspecial'];
+				$respuesta['folioUnidos'] = $programa['folioUnidos'];
+				$respuesta['escolarizado'] = $programa['escolarizado'];
+				$respuesta['ciclo'] = $programa['ciclo'];
+
 				$respuesta['idMunicipio'] = $programa['idMunicipioColegio'];
 				$respuesta['idColegio'] = $programa['idColegio'];
 				$idSedeColegio = $programa['idSedeColegio'];

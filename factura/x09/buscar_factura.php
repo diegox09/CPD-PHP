@@ -57,6 +57,11 @@
 				$respuesta['idUser'][] = $idUser;				
 				$respuesta['estadoFactura'][] = $factura['idEstadoFactura'];
 				$respuesta['fechaActualizacion'][] = $factura['fechaActualizacion'];
+
+				$respuesta['descripcionValor'][] = $factura['descripcionValor'];
+				$respuesta['subtotal'][] = $factura['subtotal'];
+				$respuesta['valorIva'][] = $factura['valorIva'];
+				$respuesta['facturaManual'][] = $factura['facturaManual'];
 				
 				$result_u = User::getInstance()->get_user_by_id($idUser);				
 				$user = mysqli_fetch_array($result_u);

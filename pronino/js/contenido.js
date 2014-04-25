@@ -474,7 +474,12 @@
 		$('#fecha_retiro').cargarInput('');
 		$('#razon_retiro').cargarSelect(0);
 		$('#razon_egresado').cargarSelect(0);	
-		$('#razon_baja').cargarSelect(0);	
+		$('#razon_baja').cargarSelect(0);
+
+		//Modificacion
+		$('#grupo_etnico').cargarSelect(0);
+		$('#tipologia_familiar').cargarSelect(0);	
+		$('#parentesco_acudiente').cargarSelect(0);	
 		
 		$.fn.limpiarYear();
 	}
@@ -508,7 +513,12 @@
 			$('.retirado').css('visibility', 'visible');
 		else
 			$('.retirado').css('visibility', 'hidden');
-		
+
+		//Modificacion
+		$('#grupo_etnico').cargarSelect(respuesta.grupoEtnico);
+		$('#tipologia_familiar').cargarSelect(respuesta.tipologiaFamiliar);
+		$('#parentesco_acudiente').cargarSelect(respuesta.parentescoAcudiente);
+
 		$.fn.year('cargar');
 			
 		$('#actualizar').focus();
@@ -597,7 +607,19 @@
 		$('#coordinador').cargarInput('');
 		$('#grado').cargarSelect(0);
 		$('#seccion').cargarSelect(0);
-		$('#jornada').cargarSelect(0);		
+		$('#jornada').cargarSelect(0);
+
+		//Modificacion
+		$('#actualmente_trabaja').cargarSelect(0);
+		$('#problema_salud').cargarSelect(0);
+		$('#ingresos_mes').cargarInput('');
+		$('#gasta_ingresos').cargarSelect(0);
+		$('#ingresos_percibidos').cargarSelect(0);
+		$('#porque_trabaja').cargarSelect(0);
+		$('#situacion_especial').cargarSelect(0);
+		$('#folio_unidos').cargarInput('');
+		$('#escolarizado').cargarSelect(0);
+		$('#ciclo').cargarSelect(0);
 			
 		if($('#id_estado').attr('value') == 2){
 			$('#form_year input[type="text"], #form_year select, #form_year textarea').attr('readonly', true);
@@ -672,6 +694,18 @@
 		$('#grado').cargarSelect(respuesta.grado);
 		$('#seccion').cargarSelect(respuesta.seccion);
 		$('#jornada').cargarSelect(respuesta.jornada);
+
+		//Modificacion
+		$('#actualmente_trabaja').cargarSelect(respuesta.actualmenteTrabaja);
+		$('#problema_salud').cargarSelect(respuesta.problemaSalud);
+		$('#ingresos_mes').cargarInput(respuesta.ingresosMes);
+		$('#gasta_ingresos').cargarSelect(respuesta.gastaIngresos);
+		$('#ingresos_percibidos').cargarSelect(respuesta.ingresosPercibidos);
+		$('#porque_trabaja').cargarSelect(respuesta.porqueTrabaja);
+		$('#situacion_especial').cargarSelect(respuesta.situacionEspecial);
+		$('#folio_unidos').cargarInput(respuesta.folioUnidos);
+		$('#escolarizado').cargarSelect(respuesta.escolarizado);
+		$('#ciclo').cargarSelect(respuesta.ciclo);
 		
 		if($('#id_estado').attr('value') == 2){
 			$('#form_year input[type="text"], #form_year select, #form_year textarea').attr('readonly', true);
@@ -799,14 +833,14 @@
 (function($){	
     $.fn.cargarListaNotas=function(respuesta){
 		var materia = ['', 'ESPAÑOL', 'MATEMATICAS'];
-		var tipoNota = ['', 'B', 'BS', 'AL', 'SP'];
+		var tipoNota = ['', 'Deficiente', 'Regular', 'Bueno', 'Excelente'];
 		
 		$.fn.limpiarNota();
 		$('#desc_notas').empty();
 		
 		if(respuesta.lista){
 			for(i=0; i<respuesta.periodo.length; i++){
-				$('#desc_notas').append('<tr class="ver_nota"><td id="'+respuesta.periodo[i]+'">'+respuesta.periodo[i]+' PERIODO</td><td id="'+respuesta.materia[i]+'">'+materia[respuesta.materia[i]]+'</td><td id="'+respuesta.tipoNota[i]+'">'+tipoNota[respuesta.tipoNota[i]]+'</td><td>'+respuesta.nota[i]+'</td><td>'+respuesta.observaciones[i]+'</td><td>'+respuesta.nombreUser[i]+' &raquo; '+respuesta.fechaActualizacion[i]+'</td></tr>');	
+				$('#desc_notas').append('<tr class="ver_nota"><td id="'+respuesta.periodo[i]+'">'+respuesta.periodo[i]+' PERIODO</td><td id="'+respuesta.materia[i]+'">'+materia[respuesta.materia[i]]+'</td><td id="'+respuesta.tipoNota[i]+'">'+tipoNota[respuesta.tipoNota[i]]+'</td><td>'+respuesta.observaciones[i]+'</td><td>'+respuesta.nombreUser[i]+' &raquo; '+respuesta.fechaActualizacion[i]+'</td></tr>');	
 			}
 		}
 		$('#desc_notas').tablesorter({widgets: ['zebra']});	
@@ -815,7 +849,7 @@
 
 (function($){	
     $.fn.nota=function(opc){		
-		if((opc == 'cargar_lista' && $('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio()) || ((opc == 'cargar' || opc == 'eliminar') && $('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio() && $('#periodo').obligatorio() && $('#materia').obligatorio()) || ($('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio() && $('#periodo').obligatorio() && $('#materia').obligatorio() && $('#nota_periodo').obligatorio())){			
+		if((opc == 'cargar_lista' && $('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio()) || ((opc == 'cargar' || opc == 'eliminar') && $('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio() && $('#periodo').obligatorio() && $('#materia').obligatorio()) || ($('#id_beneficiario_nota').obligatorio() && $('#year_nota').obligatorio() && $('#periodo').obligatorio() && $('#materia').obligatorio() )){			
 			$("#guardar_nota").attr("disabled","disabled");			
 			$('#cargando').show();
 			$('#opc_nota').cargarInput(opc);													
@@ -1573,7 +1607,7 @@ $(document).ready(function(){
 			$.fn.lista('id_usuario1','php/usuario.php','1');
 			$.fn.lista('id_usuario2','php/usuario.php','2');
 			$.fn.lista('sitio_trabajo','php/sitio.php','');
-			$.fn.lista('actividad_laboral','php/actividad.php','');			
+			//$.fn.lista('actividad_laboral','php/actividad.php','');			
 			$.fn.lista('escuela_formacion1','php/escuela.php','');
 			$.fn.lista('profesional_diagnostico','php/usuario.php','');
 			$.fn.lista('profesional_seguimiento','php/usuario.php','');
@@ -1724,9 +1758,11 @@ $(document).ready(function(){
 		$.fn.year('guardar');
 	});
 	
+	/*
 	$("#escuela_formacion1").live('change', function(event){		
 		$.fn.lista('escuela_formacion2','php/escuela.php','','',$('#escuela_formacion1').attr('value')); 
 	});	
+	*/
 	
 	$("#id_municipio_colegio").live('change', function(event){ 
 		$.fn.lista('id_colegio','php/colegio.php',$(this).attr('value')); 

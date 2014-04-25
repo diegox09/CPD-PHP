@@ -44,15 +44,15 @@
 					->setCellValue('F2', 'EDAD')
 					->setCellValue('G2', 'TIPO DOCUMENTO')
 					->setCellValue('H2', 'NUMERO DOCUMENTO')					
-					->setCellValue('I2', 'TALLA UNIFORME')
-					->setCellValue('J2', 'TALLA ZAPATO')
+					->setCellValue('I2', 'GRUPO ÉTNICO')
+					->setCellValue('J2', 'TIPOLOGIA FAMILIAR')
 					->setCellValue('K2', 'SISBEN')
 					->setCellValue('L2', 'ARS')
 					
 					->setCellValue('M1', 'INFORMACION DEL ACUDIENTE')
 					->setCellValue('M2', 'DOCUMENTO ACUDIENTE')					
 					->setCellValue('N2', 'NOMBRES ACUDIENTE')
-					->setCellValue('O2', 'APELLIDOS ACUDIENTE')
+					->setCellValue('O2', 'PARENTESCO ACUDIENTE')
 					->setCellValue('P2', 'DEPARTAMENTO')
 					->setCellValue('Q2', 'MUNICIPIO')
 					->setCellValue('R2', 'DIRECCION')
@@ -64,55 +64,55 @@
 					->setCellValue('V2', 'ESTADO')
 					->setCellValue('W2', 'FECHA RETIRO')
 					->setCellValue('X2', 'RAZON RETIRO')
-					->setCellValue('Y2', 'SITIO TRABAJO')
+					->setCellValue('Y2', 'ACTUALMENTE TRABAJA')
 					->setCellValue('Z2', 'ACTIVIDAD LABORAL')
 					->setCellValue('AA2', 'ACTIVIDAD ESPECIFICA')
-					->setCellValue('AB2', 'INTERES ESCUELA DE FORMACION 1')
-					->setCellValue('AC2', 'INTERES ESCUELA DE FORMACION 2')
+					->setCellValue('AB2', 'GRUPO')
+					->setCellValue('AC2', 'SITUACION ESPECIAL')
 					->setCellValue('AD2', 'PROFESIONAL')
 					->setCellValue('AE2', 'COORDINADOR')
 					->setCellValue('AF2', 'OBSERVACIONES')
 					
 					->setCellValue('AG1', 'INFORMACION DE LA INSTITUCION')
-					->setCellValue('AG2', 'MUNICIPIO')
+					->setCellValue('AG2', 'NNA ESCOLARIZADO')
 					->setCellValue('AH2', 'COLEGIO')
 					->setCellValue('AI2', 'SEDE')
 					->setCellValue('AJ2', 'GRADO')
 					->setCellValue('AK2', 'JORNADA')	
-					->setCellValue('AL2', 'COORDINADOR COLEGIO')
-					->setCellValue('AM2', 'NOTA NUM. PERIODO 1 ESP.')
-					->setCellValue('AN2', 'NOTA DESC. PERIODO 1 ESP.')
-					->setCellValue('AO2', 'NOTA NUM. PERIODO 1 MAT.')
-					->setCellValue('AP2', 'NOTA DESC. PERIODO 1 MAT.')
-					->setCellValue('AQ2', 'NOTA NUM. PERIODO 2 ESP.')
-					->setCellValue('AR2', 'NOTA DESC. PERIODO 2 ESP.')
-					->setCellValue('AS2', 'NOTA NUM. PERIODO 2 MAT.')
-					->setCellValue('AT2', 'NOTA DESC. PERIODO 2 MAT.')
-					->setCellValue('AU2', 'NOTA NUM. PERIODO 3 ESP.')
-					->setCellValue('AV2', 'NOTA DESC. PERIODO 3 ESP.')
-					->setCellValue('AW2', 'NOTA NUM. PERIODO 3 MAT.')
-					->setCellValue('AX2', 'NOTA DESC. PERIODO 3 MAT.')
-					->setCellValue('AY2', 'NOTA NUM. PERIODO 4 ESP.')
-					->setCellValue('AZ2', 'NOTA DESC. PERIODO 4 ESP.')
-					->setCellValue('BA2', 'NOTA NUM. PERIODO 4 MAT.')
-					->setCellValue('BB2', 'NOTA DESC. PERIODO 4 MAT.')
+					->setCellValue('AL2', 'CICLO')
+					->setCellValue('AM2', 'NOTA DESC. PERIODO 1 ESP.')
+					->setCellValue('AN2', 'OBSERVACIONES PERIODO 1 ESP.')
+					->setCellValue('AO2', 'NOTA DESC. PERIODO 1 MAT.')
+					->setCellValue('AP2', 'OBSERVACIONES PERIODO 1 MAT.')
+					->setCellValue('AQ2', 'NOTA DESC. PERIODO 2 ESP.')
+					->setCellValue('AR2', 'OBSERVACIONES PERIODO 2 ESP.')
+					->setCellValue('AS2', 'NOTA DESC. PERIODO 2 MAT.')
+					->setCellValue('AT2', 'OBSERVACIONES PERIODO 2 MAT.')
+					->setCellValue('AU2', 'NOTA DESC. PERIODO 3 ESP.')
+					->setCellValue('AV2', 'OBSERVACIONES PERIODO 3 ESP.')
+					->setCellValue('AW2', 'NOTA DESC. PERIODO 3 MAT.')
+					->setCellValue('AX2', 'OBSERVACIONES PERIODO 3 MAT.')
+					->setCellValue('AY2', 'NOTA DESC. PERIODO 4 ESP.')
+					->setCellValue('AZ2', 'OBSERVACIONES PERIODO 4 ESP.')
+					->setCellValue('BA2', 'NOTA DESC. PERIODO 4 MAT.')
+					->setCellValue('BB2', 'OBSERVACIONES PERIODO 4 MAT.')
 					
 					->setCellValue('BC1', 'INFORMACION ADICIONAL')
 					->setCellValue('BC2', 'DESPLAZADOS')
-					->setCellValue('BD2', 'RED UNIDOS')
-					->setCellValue('BE2', 'FAMILIAS EN ACCION')
-					->setCellValue('BF2', 'COMEDOR INFANTIL')
+					->setCellValue('BD2', 'FAMILIAS EN ACCION')
+					->setCellValue('BE2', 'RED UNIDOS')
+					->setCellValue('BF2', 'FOLIO UNIDOS')
 					->setCellValue('BG2', 'ENTREGA DE KIT ESCOLAR')
-					->setCellValue('BH2', 'ENTREGA DE UNIFORME')
-					->setCellValue('BI2', 'ENTREGA DE ZAPATOS')
-					->setCellValue('BJ2', 'VISITA DOMICILIARIA')
-					->setCellValue('BK2', 'VISITA ACADEMICA')
-					->setCellValue('BL2', 'VISITA PSICOSOCIAL')					
-					->setCellValue('BM2', 'INTERVENCION PSICOLOGICA')
-					->setCellValue('BN2', 'VALORACION MEDICA')
-					->setCellValue('BO2', 'VALORACION ODONTOLOGICA')
-					->setCellValue('BP2', 'KIT NUTRICIONAL')
-					->setCellValue('BQ2', 'VISITA SEGUIMIENTO')
+					->setCellValue('BH2', 'VISITA DOMICILIARIA')
+					->setCellValue('BI2', '')
+					->setCellValue('BJ2', '')
+					->setCellValue('BK2', '')
+					->setCellValue('BL2', '')					
+					->setCellValue('BM2', '')
+					->setCellValue('BN2', '')
+					->setCellValue('BO2', '')
+					->setCellValue('BP2', '')
+					->setCellValue('BQ2', '')
 					->setCellValue('BR2', 'USUARIO ACTUALIZO')
 					->setCellValue('BS2', 'FECHA ACTUALIZACION');
 		
@@ -126,7 +126,7 @@
 		$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(15);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(15);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(10);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(12);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(10);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(15);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(15);
@@ -156,21 +156,21 @@
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AK')->setWidth(10);				
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AL')->setWidth(20);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AM')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AN')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AN')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AO')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AP')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AP')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AQ')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AR')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AR')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AS')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AT')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AT')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AU')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AV')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AV')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AW')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AX')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AX')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('AY')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('AZ')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('AZ')->setWidth(16);
 		$objPHPExcel->getActiveSheet()->getColumnDimension('BA')->setWidth(12);
-		$objPHPExcel->getActiveSheet()->getColumnDimension('BB')->setWidth(12);
+		$objPHPExcel->getActiveSheet()->getColumnDimension('BB')->setWidth(16);
 		
 		
 		$objPHPExcel->getActiveSheet()->getColumnDimension('BC')->setWidth(12);
@@ -222,8 +222,15 @@
 		$razonEgresado = array('', 'Por edad legal o admision al empleo', 'Por edad legal o admision al empleo', 'Mejoro su situacion y no necesita ayuda del programa', 'Cumplio mayoria de edad');
 		$seccion = array('', '(1)', '(2)', '(3)', '(4)', '(5)', '(A)', '(B)', '(C)', '(D)', '(E)');
 		$jornada = array('', 'Mañana', 'Tarde', 'Sabados', 'Noche');
-		$notas = array('-', 'Bajo', 'Basico', 'Alto', 'Sup.');
+		$notas = array('', 'Deficiente', 'Regular', 'Bueno', 'Excelente');
+		$grupoEtnico = array('', 'Mestizo', 'Afro Descendiente', 'Indígena', 'Blanco', 'No lo sé', 'Otros');
+		$tipologiaFamiliar = array('', 'Nuclear', 'Monoparental Paterna', 'Monoparental Materna', 'Extensa', 'Otra');
+		$parentesco = array('', 'Padre/Madre', 'Tio/a', 'Hermano/a', 'Abuelo/a', 'Padrastro/Madrastra', 'Otro');
+		$siNo = array('', 'Si', 'No');
+		$actividadLaboral = array('', '', '', '', '', '', '', '', '', '', '10', '', '', '', '', '', '', '', '', '', '20', '', '', '', '', '', '', '', '', '', '30', '', '', '', '', '', '', '', '', '', '40', '', '', '', '', '', '', '', '', '', '50', 'Albañil/Construcción Civil', 'Camales/matadero', 'Comercio formal', 'Hilandería/ confección/Artesanía', 'Industria de fuegos artificiales', 'Mendicidad', 'Recolección de materiales para reciclajes', 'Segregación de basura, basurero', 'Servicios', '60', 'Carga de mercancía, flete', 'Caza y pesca', 'Comercio ambulante, ferias libres, mercado, otros', 'Conflicto armado', 'Distribución de panfletos, malabares, servicios a automovilistas en la vía pública, otros', 'Explotación sexual comercial, inclusive actuación y producción de materiales o espectáculos', 'Mecánica/ eléctrica/ manutención industrial, de automóviles, de equipamientos y utensilios', 'Negocio familiar', 'Producción cerámica/ladrillo', 'Producción o comercio de drogas', 'Silvicultura', 'Trabajo doméstico en su proprio hogar', 'Trabajo doméstico para terceros', 'Turismo/Hoteles/restaurantes', 'Otro', '', '', '', '', '80', 'Guardia o servicio militar', 'Manejo de animales', 'Minería', 'Pincha de coco, castaña u otros', 'Plantación o cosecha');
+		$situacionEspecial = array('', 'Condición de Discapacidad', 'Educación Flexible', 'Niña o Adolescente en Condición de Embarazo o Maternidad');
 		$confirmar = array('', 'X');
+		$ciclos = array('', 'Ciclo I', 'Ciclo II', 'Ciclo III', 'Ciclo IV', 'Ciclo V');
 		
 		$idUser = $_SESSION['id_pn'];		
 		$usuario = mysqli_fetch_array(Pronino::getInstance()->get_user_by_id($idUser));
@@ -251,10 +258,8 @@
 			$fechaNacimiento = implota($beneficiario['fechaNacimiento']);
 			$edad = edad($beneficiario['fechaNacimiento']);
 			$idGenero = $beneficiario['genero'];
-			$tallaUniforme = $beneficiario['tallaUniforme'];
-			$tallaZapato = $beneficiario['tallaZapato'];
-			if($tallaZapato == 0)
-				$tallaZapato = '';
+			$idGrupoEtnico = $beneficiario['grupoEtnico'];
+			$idTipologiaFamiliar = $beneficiario['tipologiaFamiliar'];
 				
 			$idSisben = $beneficiario['sisben'];
 			$idArs = $beneficiario['idArs'];
@@ -300,7 +305,9 @@
 			$documentoAcudiente = $acudiente['documentoBeneficiario'];
 			$nombreAcudiente = utf8_encode($acudiente['nombreBeneficiario']);
 			$apellidoAcudiente = utf8_encode($acudiente['apellidoBeneficiario']);
-					
+			
+			$idParentescoAcudiente = $beneficiario['parentescoAcudiente'];
+
 			$telefono = $beneficiario['telefono'];
 			$direccion = utf8_encode($beneficiario['direccion']);
 			$idBarrio = $beneficiario['idBarrio'];	
@@ -323,21 +330,24 @@
 				$departamento = mysqli_fetch_array(Pronino::getInstance()->get_departamento_by_id($idDepartamento));	
 				$nombreDepartamento = utf8_encode($departamento['nombreDepartamento']);
 			}
-						
+				
+			/*			
 			$idSitioTrabajo = $beneficiario['sitioTrabajo'];
 			$sitioTrabajo = '';
 			if($idSitioTrabajo != 0){
 				$sitio = mysqli_fetch_array(Pronino::getInstance()->get_sitio_by_id($idSitioTrabajo));	
 				$sitioTrabajo = utf8_encode($sitio['nombreSitio']);
-			}
+			}*/
+			$actualmenteTrabaja = $beneficiario['actualmenteTrabaja'];	
 			
 			$idActividadLaboral = $beneficiario['actividadLaboral'];
+			/*
 			$actividadLaboral = '';					
 			if($idActividadLaboral != 0){
 				$actividad = mysqli_fetch_array(Pronino::getInstance()->get_actividad_by_id($idActividadLaboral));	
 				$actividadLaboral = utf8_encode($actividad['nombreActividad']);
 			}
-			
+			*/
 			$actividadEspecifica = utf8_encode($beneficiario['actividadEspecifica']);
 			$observacionesYear = utf8_encode($beneficiario['observaciones']);
 			
@@ -347,27 +357,34 @@
 				$escuela = mysqli_fetch_array(Pronino::getInstance()->get_escuela_by_id($idEscuelaFormacion1));
 				$escuelaFormacion1 = utf8_encode($escuela['nombreEscuela']);
 			}
+			/*
 			$idEscuelaFormacion2 = $beneficiario['escuelaFormacion2'];
 			$escuelaFormacion2 = '';
 			if($idEscuelaFormacion2 != 0){
 				$escuela = mysqli_fetch_array(Pronino::getInstance()->get_escuela_by_id($idEscuelaFormacion2));
 				$escuelaFormacion2 = utf8_encode($escuela['nombreEscuela']);
-			}					
+			}
+			*/
+			$idSituacionEspecial = $beneficiario['situacionEspecial'];
+			$escolarizado = $beneficiario['escolarizado'];
 				
 			$kitEscolar = implota($beneficiario['kitEscolar']);
+			$visitaDomiciliaria = implota($beneficiario['visitaDomiciliaria']);
+			/*
 			$kitNutricional = implota($beneficiario['kitNutricional']);
 			$uniforme = implota($beneficiario['uniforme']);
-			$zapatos = implota($beneficiario['zapatos']);
-			$visitaDomiciliaria = implota($beneficiario['visitaDomiciliaria']);
+			$zapatos = implota($beneficiario['zapatos']);			
 			$visitaSeguimiento = implota($beneficiario['visitaSeguimiento']);
 			$visitaAcademica = implota($beneficiario['visitaAcademica']);
 			$visitaPsicosocial = implota($beneficiario['visitaPsicosocial']);					
 			$intervencionPsicologica = implota($beneficiario['intervencionPsicologica']);
 			$valoracionMedica = implota($beneficiario['valoracionMedica']);
 			$valoracionOdontologica = implota($beneficiario['valoracionOdontologica']);	
+			*/
 							
 			$desplazados = $beneficiario['desplazados'];
-			$juntos = $beneficiario['juntos'];				
+			$juntos = $beneficiario['juntos'];
+			$folioUnidos = $beneficiario['folioUnidos'];				
 			$familiasAccion = $beneficiario['familiasAccion'];				
 			$comedorInfantil = $beneficiario['comedorInfantil'];
 			
@@ -390,7 +407,7 @@
 			if($idSedeColegio != 0){								
 				$sede = mysqli_fetch_array(Pronino::getInstance()->get_sede_by_id($idSedeColegio));	
 				$nombreSedeColegio = utf8_encode($sede['nombreSede']);
-				$nombreCoordinador = utf8_encode($sede['nombreCoordinador']);
+				//$nombreCoordinador = utf8_encode($sede['nombreCoordinador']);
 			}	
 			$grado = $beneficiario['grado'];
 			if($grado == 0)
@@ -398,6 +415,7 @@
 			
 			$idSeccion = $beneficiario['seccion'];	
 			$idJornada = $beneficiario['jornada'];
+			$idCiclo = $beneficiario['ciclo'];
 			
 			$fa = mysqli_fetch_array(Pronino::getInstance()->get_fecha_actualizacion_year($idBeneficiario, $year));
 			$fechaActualizacion = $fa['fechaActualizacion'];
@@ -418,49 +436,51 @@
 			$periodo2 = array('-','-','-','-');
 			$periodo3 = array('-','-','-','-');
 			$periodo4 = array('-','-','-','-');
+			
 			$resultNotas = Pronino::getInstance()->get_beneficiario_notas_by_year($idBeneficiario, $year);
 			while ($nota = mysqli_fetch_array($resultNotas)){
-				$tipo = $nota['tipoNota'];
+				$tipo = $nota['tipoNota'];				
 				switch($nota['idPeriodo']){
 					case '1':	if($nota['idMateria'] == 1){							
-									$periodo1[0] = $nota['nota'];									
-									$periodo1[1] = $notas[$tipo];
+									$periodo1[0] = $notas[$tipo];						
+									utf8_encode($periodo1[1] = $nota['observaciones']);
 								}
 								else{
-									$periodo1[2] = $nota['nota'];
-									$periodo1[3] = $notas[$tipo];
+									$periodo1[2] = $notas[$tipo];
+									utf8_encode($periodo1[3] = $nota['observaciones']);
 								}
 								break;
-					case '2':	if($nota['idMateria'] == 1)	{						
-									$periodo2[0] = $nota['nota'];
-									$periodo2[1] = $notas[$tipo];
+					case '2':	if($nota['idMateria'] == 1){						
+									$periodo2[0] = $notas[$tipo];
+									utf8_encode($periodo2[1] = $nota['observaciones']);
 								}
 								else{
-									$periodo2[2] = $nota['nota'];
-									$periodo2[3] = $notas[$tipo];
+									$periodo2[2] = $notas[$tipo];
+									utf8_encode($periodo2[3] = $nota['observaciones']);
 								}
 								break;			
 					case '3':	if($nota['idMateria'] == 1){							
-									$periodo3[0] = $nota['nota'];
-									$periodo3[1] = $notas[$tipo];
+									$periodo3[0] = $notas[$tipo];
+									utf8_encode($periodo3[1] = $nota['observaciones']);
 								}
 								else{
-									$periodo3[2] = $nota['nota'];
-									$periodo3[3] = $notas[$tipo];
+									$periodo3[2] = $notas[$tipo];
+									utf8_encode($periodo3[3] = $nota['observaciones']);
 								}
 								break;			
 					case '4':	if($nota['idMateria'] == 1){								
-									$periodo4[0] = $nota['nota'];
-									$periodo4[1] = $notas[$tipo]." + ".$nota['observaciones'];
+									$periodo4[0] = $notas[$tipo];
+									$periodo4[1] = utf8_encode($nota['observaciones']);
 								}
 								else{
-									$periodo4[2] = $nota['nota'];
-									$periodo4[3] = $notas[$tipo]." + ".$nota['observaciones'];
+									$periodo4[2] = $notas[$tipo];
+									$periodo4[3] = utf8_encode($nota['observaciones']);
 								}
 								break;			
-				}															
+				}											
 			}
 			mysqli_free_result($resultNotas);
+			
 						
 			$objPHPExcel->getActiveSheet()->getCell('A'.$fila)->setValueExplicit($idItem,PHPExcel_Cell_DataType::TYPE_STRING);
 			
@@ -473,14 +493,14 @@
 						->setCellValue("F".$fila, $edad)
 						->setCellValue("G".$fila, $tipoDocumento[$td])
 						->setCellValue("H".$fila, $documentoBeneficiario)						
-						->setCellValue("I".$fila, $tallaUniformes[$tallaUniforme])
-						->setCellValue("J".$fila, $tallaZapato)
+						->setCellValue("I".$fila, $grupoEtnico[$idGrupoEtnico])
+						->setCellValue("J".$fila, $tipologiaFamiliar[$idTipologiaFamiliar])
 						->setCellValue("K".$fila, $sisben[$idSisben])
 						->setCellValue("L".$fila, $nombreArs)
 						
 						->setCellValue("M".$fila, $documentoAcudiente)
-						->setCellValue("N".$fila, $nombreAcudiente)
-						->setCellValue("O".$fila, $apellidoAcudiente)
+						->setCellValue("N".$fila, $nombreAcudiente." ".$apellidoAcudiente)
+						->setCellValue("O".$fila, $parentesco[$idParentescoAcudiente])
 						->setCellValue("P".$fila, $nombreDepartamento)
 						->setCellValue("Q".$fila, $nombreMunicipio)
 						->setCellValue("R".$fila, $direccion)
@@ -491,21 +511,21 @@
 						->setCellValue("V".$fila, $estado[$idEstado])
 						->setCellValue("W".$fila, $fechaRetiro)
 						->setCellValue("X".$fila, $descripcionRetiro)						
-						->setCellValue('Y'.$fila, $sitioTrabajo)
-						->setCellValue('Z'.$fila, $actividadLaboral)
+						->setCellValue('Y'.$fila, $siNo[$actualmenteTrabaja])
+						->setCellValue('Z'.$fila, $actividadLaboral[$idActividadLaboral])
 						->setCellValue('AA'.$fila, $actividadEspecifica)
 						->setCellValue('AB'.$fila, $escuelaFormacion1)
-						->setCellValue('AC'.$fila, $escuelaFormacion2)
+						->setCellValue('AC'.$fila, $situacionEspecial[$idSituacionEspecial])
 						->setCellValue('AD'.$fila, $usuario1)
 						->setCellValue('AE'.$fila, $usuario2)
 						->setCellValue('AF'.$fila, $observacionesYear)
 						
-						->setCellValue('AG'.$fila, $nombreMunicipioColegio)
+						->setCellValue('AG'.$fila, $siNo[$escolarizado])
 						->setCellValue('AH'.$fila, $nombreColegio)
 						->setCellValue('AI'.$fila, $nombreSedeColegio)
 						->setCellValue('AJ'.$fila, $grado." ".$seccion[$idSeccion])
 						->setCellValue('AK'.$fila, $jornada[$idJornada])	
-						->setCellValue('AL'.$fila, $nombreCoordinador)
+						->setCellValue('AL'.$fila, $ciclos[$idCiclo])
 						
 						->setCellValue('AM'.$fila, $periodo1[0])
 						->setCellValue('AN'.$fila, $periodo1[1])
@@ -525,21 +545,21 @@
 						->setCellValue('BB'.$fila, $periodo4[3])
 						
 						->setCellValue('BC'.$fila, $confirmar[$desplazados])
-						->setCellValue('BD'.$fila, $confirmar[$juntos])
-						->setCellValue('BE'.$fila, $confirmar[$familiasAccion])
-						->setCellValue('BF'.$fila, $confirmar[$comedorInfantil])
+						->setCellValue('BD'.$fila, $confirmar[$familiasAccion])
+						->setCellValue('BE'.$fila, $confirmar[$juntos])
+						->setCellValue('BF'.$fila, $folioUnidos)
 						
 						->setCellValue('BG'.$fila, $kitEscolar)
-						->setCellValue('BH'.$fila, $uniforme)
-						->setCellValue('BI'.$fila, $zapatos)						
-						->setCellValue('BJ'.$fila, $visitaDomiciliaria)
-						->setCellValue('BK'.$fila, $visitaAcademica)
-						->setCellValue('BL'.$fila, $visitaPsicosocial)						
-						->setCellValue('BM'.$fila, $intervencionPsicologica)
-						->setCellValue('BN'.$fila, $valoracionMedica)
-						->setCellValue('BO'.$fila, $valoracionOdontologica)
-						->setCellValue('BP'.$fila, $kitNutricional)
-						->setCellValue('BQ'.$fila, $visitaSeguimiento)
+						->setCellValue('BH'.$fila, $visitaDomiciliaria)
+						->setCellValue('BI'.$fila, '')						
+						->setCellValue('BJ'.$fila, '')
+						->setCellValue('BK'.$fila, '')
+						->setCellValue('BL'.$fila, '')						
+						->setCellValue('BM'.$fila, '')
+						->setCellValue('BN'.$fila, '')
+						->setCellValue('BO'.$fila, '')
+						->setCellValue('BP'.$fila, '')
+						->setCellValue('BQ'.$fila, '')
 						->setCellValue('BR'.$fila, $usuarioActualizo)
 						->setCellValue('BS'.$fila, $fechaActualizacion);
 		}

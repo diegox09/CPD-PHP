@@ -265,11 +265,23 @@
                 	</label>        
                 </div>
                 <div style="width:100%">                  
-                    <div class="clear" style="width:130px">
+                    <div class="clear" style="width:150px">
                         <label>Item</label>
                         <input type="text" name="item" id="item" class="input_c" value="" />   
                     </div> 
                     <div style="width:160px">
+                        <label class="new">Grupo Étnico</label>
+                        <select id="grupo_etnico" class="select_c" name="grupo_etnico">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Mestizo </option>
+                            <option value="2"> Afro descendiente </option>
+                            <option value="3"> Indígena </option>
+                            <option value="4"> Blanco </option>
+                            <option value="5"> No lo sé </option>
+                            <option value="6"> Otros </option>
+                        </select>   
+                    </div>
+                    <div style="width:150px">
                         <label>Sisben</label>
                         <select id="sisben" class="select_c" name="sisben">
                             <option value="0"> - Seleccionar - </option>
@@ -277,8 +289,13 @@
                             <option value="2"> II </option>
                             <option value="3"> III </option>
                         </select>            
-                    </div>  
+                    </div> 
                     <div style="width:160px">
+                        <label>ARS</label>
+                        <select id="id_ars" class="select_c" name="id_ars">
+                        </select>   
+                    </div>                    
+                    <div style="width:150px;display:none">
                         <label>Talla Uniforme</label>
                         <select id="talla_uniforme" class="select_c" name="talla_uniforme">
                             <option value="0"> - Seleccionar - </option>
@@ -299,7 +316,7 @@
                             <option value="42"> L (42-44) </option>
                         </select>            
                     </div>         
-                    <div style="width:160px">
+                    <div style="width:150px;display:none">
                         <label>Talla Zapato</label>
                         <select id="talla_zapato" class="select_c" name="talla_zapato">
                             <option value="0"> - Seleccionar - </option>
@@ -322,7 +339,7 @@
                             <option value="42"> 42 </option>
                             <option value="43"> 43 </option>
                         </select>    
-                    </div>
+                    </div>                
                     <div id="usuario1" style="width:160px;display:none">
                         <label>Profesional</label>
                         <select id="id_usuario1" class="select_c" name="id_usuario1">
@@ -332,12 +349,18 @@
                         <label>Coordinador</label>
                         <select id="id_usuario2" class="select_c" name="id_usuario2">
                         </select>   
-                    </div>                   
+                    </div>
                     <div class="clear" style="width:150px">
-                        <label>ARS</label>
-                        <select id="id_ars" class="select_c" name="id_ars">
-                        </select>   
-                    </div> 
+                        <label class="new">Tipologia Familiar</label>
+                        <select id="tipologia_familiar" class="select_l" name="tipologia_familiar">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Nuclear </option>                            
+                            <option value="2"> Monoparental Paterna </option>
+                            <option value="3"> Monoparental Materna </option>
+                            <option value="4"> Extensa </option>
+                            <option value="5"> Otra </option>
+                        </select> 
+                    </div>  
                     <div style="width:150px">
                         <label>Fecha de Ingreso</label>
                         <input type="text" name="fecha_ingreso" class="input_c" id="fecha_ingreso" value="" />   
@@ -350,7 +373,7 @@
                             <option value="2"> Inactivo </option>
                         </select>   
                     </div>                    
-                    <div style="width:160px;visibility:hidden" class="retirado">
+                    <div style="width:150px;visibility:hidden" class="retirado">
                         <label>Fecha de Retiro</label>
                         <input type="text" name="fecha_retiro" id="fecha_retiro" class="input_c" value="" />   
                     </div>                    
@@ -359,9 +382,11 @@
                         <select id="razon_egresado" class="select_c" name="razon_egresado">
                             <option value="0"> - Seleccionar - </option>
                             <option value="1"> Por edad legal o admision al empleo </option>
+                             <option value="6"> Porque finalizo primaria </option>
                             <option value="2"> Porque finalizo secundaria </option>
                             <option value="3"> Mejoro su situacion y no necesita ayuda del programa </option>
-                            <option value="4"> Cumplio mayoria de edad </option>
+                            <option value="5"> Derivacion a Otras Redes </option> 
+                            <option value="4"> Cumplio mayoria de edad </option>                                                      
                         </select>   
                     </div>
                     <div style="width:160px;visibility:hidden" class="retirado">                            
@@ -369,16 +394,25 @@
                         <select id="razon_baja" class="select_c" name="razon_baja">
                             <option value="0"> - Seleccionar - </option>
                             <option value="1"> Se mudo </option>
+                            <option value="13"> Cambió de Escuela </option>
                             <option value="2"> Casamiento/convivencia </option>
+                            <option value="14"> Embarazo </option>
                             <option value="3"> Fallecimiento </option>
                             <option value="4"> Se retiro la ONG de la escuela </option>
                             <option value="5"> Abandono programa </option>
                             <option value="6"> Incumplimiento acuerdos del programa </option>
                             <option value="7"> Problemas de salud </option>
+                            <!--
                             <option value="8"> Derivacion a otras redes </option>
+                            -->
                             <option value="9"> Baja de ONG del programa </option>
-                            <option value="10"> Desinteres al estudio </option>
+                            <option value="10"> Desinterés al estudio </option>
+                            <!--
                             <option value="11"> Estudia a distancia </option>
+                            -->
+                            <option value="15"> Deserción Escolar</option>
+                            <option value="16"> No Completo Ciclo de Intervención </option>
+                            <option value="17"> Traspaso Competencias Siglo XXI </option>
                             <option value="12"> Otro </option>
                         </select>   
                     </div> 
@@ -393,7 +427,7 @@
                         </select>   
                     </div>
                       
-                    <div class="clear" style="width:185px">
+                    <div class="clear" style="width:160px">
                         <label>Documento Acudiente</label>
                         <input type="text" name="documento_acudiente" id="documento_acudiente" class="input_l" value="" readonly />   
                     </div> 
@@ -402,12 +436,24 @@
                         &nbsp;
                 		<a href="#" id="acudiente" class="generico" title="Actualizar Acudiente">&nbsp;&nbsp;&nbsp;</a>
                     </div>   	       
-                    <div style="width:400px">
+                    <div style="width:310px">
                         <label>Nombre del Acudiente</label>
                         <input type="text" name="nombre_acudiente" id="nombre_acudiente" class="input_l" value="" readonly />   
-                    </div> 
-                    <div style="width:335px;text-align:right">
-                    	<div style="width:325px;height:2px">&nbsp;</div>
+                    </div>
+                    <div style="width:160px">
+                        <label class="new">Parentesco</label>
+                        <select id="parentesco_acudiente" class="select_l" name="parentesco_acudiente">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Padre/Madre </option>                            
+                            <option value="2"> Tio/a </option>
+                            <option value="3"> Hermano/a </option>
+                            <option value="4"> Abuelo/a </option>
+                            <option value="5"> Padrastro/Madrastra </option>
+                            <option value="6"> Otro </option>
+                        </select> 
+                    </div>     
+                    <div style="width:90px;text-align:right">
+                    	<div style="width:80px;height:2px">&nbsp;</div>
                     	<input type="submit" id="guardar_pronino" class="boton_gris" value="Guardar" title="Guardar Informacion"/>
                         &nbsp;
                     </div> 
@@ -1124,36 +1170,154 @@
                     	</select>
                     </label>
                 </div>
-                <div>                  
+                <div>
+                    <!--                  
                     <div style="width:234px">
                         <label>Sitio de Trabajo</label>
                         <select id="sitio_trabajo" class="select_l" name="sitio_trabajo">
                         </select>  
                     </div>  
-                    <div style="width:234px">
-                        <label>Actividad Laboral</label>
+                    -->
+                    <div style="width:230px">
+                        <label class="new">Actualmente Trabaja</label></br>
+                        <select id="actualmente_trabaja" class="select_l" name="actualmente_trabaja">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1">Si</option>
+                            <option value="2">No</option>
+                        </select>           
+                    </div>
+                    <div style="width:235px">
+                        <label class="mov">Actividad Laboral</label>
                         <select id="actividad_laboral" class="select_l" name="actividad_laboral">
+                            <option value="0"> - Seleccionar - </option>
+                            <optgroup label="Urbano">
+                                <option value="51">Albañil/Construcción Civil</option>
+                                <option value="52">Camales/matadero</option>
+                                <option value="53">Comercio formal</option>
+                                <option value="54">Hilandería/ confección/Artesanía</option>
+                                <option value="55">Industria de fuegos artificiales</option>
+                                <option value="56">Mendicidad</option>
+                                <option value="57">Recolección de materiales para reciclajes</option>
+                                <option value="58">Segregación de basura, basurero</option>
+                                <option value="59">Servicios</option>
+                            </optgroup>
+                            <optgroup label="Urbano y Rural">
+                                <option value="61">Carga de mercancía, flete</option>
+                                <option value="62">Caza y pesca</option>
+                                <option value="63">Comercio ambulante, ferias libres, mercado, otros</option>
+                                <option value="64">Conflicto armado</option>
+                                <option value="65">Distribución de panfletos, malabares, servicios a automovilistas en la vía pública, otros</option>
+                                <option value="66">Explotación sexual comercial, inclusive actuación y producción de materiales o espectáculos</option>
+                                <option value="67">Mecánica/ eléctrica/ manutención industrial, de automóviles, de equipamientos y utensilios</option>
+                                <option value="68">Negocio familiar</option>
+                                <option value="69">Producción cerámica/ladrillo</option>
+                                <option value="70">Producción o comercio de drogas</option>
+                                <option value="71">Silvicultura</option>
+                                <option value="72">Trabajo doméstico en su proprio hogar</option>
+                                <option value="73">Trabajo doméstico para terceros</option>
+                                <option value="74">Turismo/Hoteles/restaurantes</option>
+                                <option value="75">Otro</option>
+                            </optgroup>
+                            <optgroup label="Rural">
+                                <option value="81">Guardia o servicio militar</option>
+                                <option value="82">Manejo de animales</option>
+                                <option value="83">Minería</option>
+                                <option value="84">Pincha de coco, castaña u otros</option>
+                                <option value="85">Plantación o cosecha</option>
+                            </optgroup>
                         </select>   
                     </div>  
-                    <div style="width:488px">
+                    <div style="width:235px">
                         <label>Actividad Especifica</label>
                         <input type="text" name="actividad_especifica" id="actividad_especifica" class="input_l" value="" />   
-                    </div>          
-                    <div class="clear" style="width:205px">
-                        <label>Escuela de Formacion 1</label>
-                        <select id="escuela_formacion1" class="select_l" name="escuela_formacion1">
+                    </div>
+                    <div style="width:235px">
+                        <label class="new">Problema Salud x el Trabajo</label>
+                        <select id="problema_salud" class="select_l" name="problema_salud">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1">Auditivos</option>
+                            <option value="2">Cardiológicos</option>
+                            <option value="3">Dermatológicos</option>
+                            <option value="4">Fonoaudiológicos</option>
+                            <option value="5">Neurológicos</option>
+                            <option value="6">Oftalmológicos</option>
+                            <option value="7">Odontológicos</option>
+                            <option value="8">Respiratorios</option>
+                            <option value="9">Traumatológicos</option>
+                            <option value="10">Psicológia</option>
+                            <option value="11">Sexual y Reproductiva</option>
+                            <option value="12">Otro</option>
                         </select>  
                     </div>
+
+                    <div class="clear" style="width:230px">
+                        <label class="new">Ingresos Aprox. al Mes</label> 
+                        <input type="text" name="ingresos_mes" id="ingresos_mes" class="input_c" value="" />
+                    </div> 
+                    <div style="width:235px">
+                        <label class="new">En que Gasta los Ingresos</label>
+                        <select id="gasta_ingresos" class="select_c" name="gasta_ingresos">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Gastos del Hogar (alimentación, vivienda) </option>
+                            <option value="2"> Gastos Personales (alimentación, vestuario) </option>
+                            <option value="3"> Estudios (escuela, materiales escolares, transporte para la escuela, otros cursos) </option> 
+                            <option value="4"> Salud </option>
+                            <option value="5"> Ahorro </option>
+                            <option value="6"> Drogas </option>
+                            <option value="7"> Otras Razones </option>
+                        </select>  
+                    </div>
+                    <div style="width:235px">
+                        <label class="new">Los Ingresos Percibidos son</label>
+                        <select id="ingresos_percibidos" class="select_c" name="ingresos_percibidos">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Sustitutivos </option>
+                            <option value="2"> Complementarios </option>
+                            <option value="3"> Para Auto Sustento </option> 
+                        </select>  
+                    </div>
+                    <div style="width:235px">
+                        <label class="new">Por que Trabaja</label>
+                        <select id="porque_trabaja" class="select_c" name="porque_trabaja">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Para ayudar a costear sus estudios </option>
+                            <option value="2"> Para ayudar en los gastos de la casa </option>
+                            <option value="3"> Para tener su propio Dinero </option> 
+                            <option value="4"> Otro </option> 
+                        </select>  
+                    </div>  
+
+                    <div class="clear" style="width:418px">
+                        <label>Observaciones</label>
+                        <textarea name="observaciones" id="observaciones_year" value="" ></textarea>
+                    </div>         
+                    <div style="width:265px">
+                        <label class="mov">Grupo</label>
+                        <select id="escuela_formacion1" class="select_l" name="escuela_formacion1">
+                        </select>  
+                    </div>                    
+                    <!--
                     <div style="width:205px">
                         <label>Escuela de Formacion 2</label>
                         <select id="escuela_formacion2" class="select_l" name="escuela_formacion2">
                         </select>  
                     </div>
+                    -->
+                    <div style="width:265px">
+                        <label class="new">Situacion Especial</label>
+                        <select id="situacion_especial" class="select_c" name="situacion_especial">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Condicion de Discapacidad </option>
+                            <option value="2"> Educación flexible </option>
+                            <option value="3"> Niña o adolescente en condición de embarazo o Maternidad</option> 
+                        </select>  
+                    </div>                   
                     <div style="width:160px">
                         <label>Entrega Kit Escolar</label> 
                         <input type="text" name="kit_escolar" id="kit_escolar" class="input_c" value="" />
-                    </div> 
-                    <div style="width:15px">&nbsp;</div>                     
+                    </div>                     
+                    <!-- 
+                    <div style="width:15px">&nbsp;</div>                    
                     <div style="width:160px">
                         <label>Entrega Uniforme</label> 
                         <input type="text" name="uniforme" id="uniforme" class="input_c" value="" />   
@@ -1163,14 +1327,18 @@
                         <label>Entrega Zapatos</label> 
                         <input type="text" name="zapatos" id="zapatos" class="input_c" value="" />
                     </div>
-                    <div class="clear" style="width:418px">
-                        <label>Observaciones</label>
-                        <textarea name="observaciones" id="observaciones_year" value="" ></textarea>
-                    </div>
+                    -->
+                    <div style="width:15px">&nbsp;</div>
                     <div style="width:160px">
                         <label>Visita Domiciliaria</label> 
                         <input type="text" name="visita_domiciliaria" id="visita_domiciliaria" class="input_c" value="" />
-                    </div> 
+                    </div>
+                    <div style="width:15px">&nbsp;</div>
+                    <div style="width:160px">
+                        <label class="new">Folio Unidos</label> 
+                        <input type="text" name="folio_unidos" id="folio_unidos" class="input_c" value="" />
+                    </div>                       
+                    <!--
                     <div style="width:15px">&nbsp;</div>  
                     <div style="width:160px">
                         <label>Visita Academica</label> 
@@ -1195,22 +1363,26 @@
                         <label>Val. Odontologica</label> 
                         <input type="text" name="valoracion_odontologica" id="valoracion_odontologica" class="input_c" value="" />
                     </div>
-                    <div class="clear" style="width:140px">                            
+                    -->
+                    <div style="width:160px">                            
                         <input type="checkbox" id="desplazados" name="desplazados" title="Desplazados" value="1"/>
                         <label>Desplazados</label> 
                     </div>
-                    <div style="width:125px">                            
+                    <div style="width:15px">&nbsp;</div>                    
+                    <div style="width:160px">                            
+                        <input type="checkbox" id="familias_accion" name="familias_accion" title="Familias en Accion" value="1"/>  
+                        <label>Flias. en Accion</label>
+                    </div> 
+                    <div style="width:15px">&nbsp;</div>                   
+                    <div style="width:160px">                            
                         <input type="checkbox" id="juntos" name="juntos" title="Red Unidos" value="1"/>
                         <label>Red Unidos</label>    
                     </div>
-                    <div style="width:150px">                            
-                        <input type="checkbox" id="familias_accion" name="familias_accion" title="Familias en Accion" value="1"/>  
-                        <label>Flias. en Accion</label>
-                    </div>
+                    <!--
                     <div style="width:150px">                            
                         <input type="checkbox" id="comedor_infantil" name="comedor_infantil" title="Comedor Infantil" value="1"/>    
                         <label>Comedor Infantil</label>
-                    </div>
+                    </div>                    
                     <div style="width:15px">&nbsp;</div>
                     <div style="width:160px">
                         <label>Kit Nutricional</label> 
@@ -1220,29 +1392,38 @@
                     <div style="width:160px">
                         <label class="new">Visita Seguimiento</label> 
                         <input type="text" name="visita_seguimiento" id="visita_seguimiento" class="input_c" value="" />
-                    </div>    
+                    </div>
+                    -->    
                 </div>
                 
                 <div class="subheader_info">
                     INFORMACION DE LA INSTITUCION
                 </div>
                 <div>
+                    <div style="width:200px">
+                        <label class="new">NNA Escolarizado</label>
+                        <select id="escolarizado" class="select_l" name="escolarizado">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Si </option>
+                            <option value="2"> No </option>                            
+                        </select>   
+                    </div>
                 	<div style="width:200px">
                         <label>Municipio</label>
                         <select id="id_municipio_colegio" class="select_l" name="id_municipio">                            
                         </select>   
                     </div>
-                    <div style="width:375px">
+                    <div style="width:270px">
                         <label>Colegio</label>
                         <select id="id_colegio" class="select_l" name="id_colegio">
                         </select>  
                     </div>
-                    <div style="width:370px">
+                    <div style="width:270px">
                         <label>Sede</label>
                         <select id="id_sede" class="select_l" name="id_sede">
                         </select>   
                     </div> 
-                    <div class="clear" style="width:150px">
+                    <div class="clear" style="width:140px">
                         <label>Grado</label>
                         <select id="grado" class="select_c" name="grado">
                             <option value="0"> - Seleccionar - </option>
@@ -1259,7 +1440,7 @@
                             <option value="11"> 11 </option>
                         </select>  
                     </div>
-                    <div style="width:150px">
+                    <div style="width:140px">
                         <label>Seccion</label>
                         <select id="seccion" class="select_c" name="seccion">
                             <option value="0"> - Seleccionar - </option>
@@ -1285,22 +1466,34 @@
                             <option value="20"> J </option>
                         </select>  
                     </div>
-                    <div style="width:150px">
+                    <div style="width:140px">
                         <label>Jornada</label>
                         <select id="jornada" class="select_c" name="jornada">
                             <option value="0"> - Seleccionar - </option>
                             <option value="1"> Mañana </option>
                             <option value="2"> Tarde </option>
-                            <option value="3"> Sabados </option>
                             <option value="4"> Noche </option>
+                            <option value="3"> Sabados y/o Domingos </option>                            
                         </select>   
                     </div>
-                    <div style="width:112px">&nbsp;</div>
-                    <div style="width:372px">
+                    <div style="width:140px">
+                        <label class="new">Ciclo</label>
+                        <select id="ciclo" class="select_c" name="ciclo">
+                            <option value="0"> - Seleccionar - </option>
+                            <option value="1"> Ciclo I </option>
+                            <option value="2"> Ciclo II </option>
+                            <option value="3"> Ciclo III </option>
+                            <option value="4"> Ciclo IV </option>
+                            <option value="5"> Ciclo V </option>
+                        </select>
+                        
+                    </div>
+                    <div style="width:372px;display:none">
                         <label>Coordinador Colegio</label>
                         <input type="text" name="coordinador" id="coordinador" class="input_l" value="" readonly />   
                     </div>                     
-                    <div style="width:960px;text-align:right">
+                    <div style="width:372px;text-align:right">
+                        <div style="width:362px;height:2px">&nbsp;</div>
                     	<input type="button" id="eliminar_year" class="boton_naranja" value="Eliminar" title="Eliminar Informacion del Año Actual" style="display:none"/>
                         &nbsp;&there4;&nbsp;
                         <input type="submit" id="guardar_year" class="boton_gris" value="Guardar" title="Guardar Informacion del Año Actual"/>
@@ -1338,8 +1531,10 @@
                                 <th width="10%">Periodo</th>
                                 <th width="12%">Materia</th>
                                 <th width="10%">Tipo Nota</th>
+                                <!--
                                 <th width="8%">Nota</th>
-                                <th width="32%">Observaciones</th>
+                                -->
+                                <th width="40%">Observaciones</th>
                                 <th width="28%">Fecha Actualizacion</th>
                             </tr>
                        	</thead>
@@ -1366,13 +1561,13 @@
                                 <th>
                                     <select id="tipo_nota" class="select_l" name="tipo_nota" label="Seleccione un tipo de nota">
                                         <option value="0"> - Seleccionar - </option>
-                                        <option value="1"> Bajo </option>
-                                        <option value="2"> Basico </option> 
-                                        <option value="3"> Alto </option>
-                                        <option value="4"> Superior </option>                                 
+                                        <option value="1"> Deficiente </option>
+                                        <option value="2"> Regular </option> 
+                                        <option value="3"> Bueno </option>
+                                        <option value="4"> Excelente </option>                                 
                                     </select>
                                 </th>
-                                <th>
+                                <th style="display:none">
                                     <input type="text" name="nota" id="nota_periodo" class="input_c" value="" label="Digite la nota"/>
                                 </th>
                                 <th>
