@@ -168,7 +168,7 @@
 		$('#apellidos_generico').cargarInput('');		
 		$('#td_generico').cargarSelect(0);
 		$('#documento_beneficiario_generico').cargarInput('');
-		$('#fecha_nacimiento').cargarInput('');
+		$('#fecha_nacimiento_generico').cargarInput('');
 		$('#edad_generico').cargarInput('');
 		$('#genero_generico').cargarSelect(0);
 		$('#telefono_generico').cargarInput('');
@@ -348,6 +348,7 @@
 		$('#id_beneficiario_diagnostico').cargarInput('');
 		$('#id_beneficiario_seguimiento').cargarInput('');
 		$('#id_beneficiario_psicosocial').cargarInput('');
+		$('#id_beneficiario_resumen').cargarInput('');
 				
 		$('#nombres').cargarInput('');
 		$('#apellidos').cargarInput('');		
@@ -379,6 +380,7 @@
 		$('#id_beneficiario_diagnostico').cargarInput(respuesta.idBeneficiario);
 		$('#id_beneficiario_seguimiento').cargarInput(respuesta.idBeneficiario);
 		$('#id_beneficiario_psicosocial').cargarInput(respuesta.idBeneficiario);
+		$('#id_beneficiario_resumen').cargarInput(respuesta.idBeneficiario);
 				
 		$('#nombres').cargarInput(respuesta.nombreBeneficiario);
 		$('#apellidos').cargarInput(respuesta.apellidoBeneficiario);		
@@ -1554,6 +1556,134 @@
     }
 })(jQuery);
 
+(function($){	
+    $.fn.limpiarResumen=function(){	
+		$('#form_resumen').find('.input_error').removeClass('input_error');
+		$('#usuario_actualizo_resumen').html('-');
+		$('#fecha_actualizacion_resumen').html('-');	
+		$('#id_resumen').cargarInput('');		
+		$('#nombre_beneficiario_resumen').cargarInput($('#nombres').attr('value')+' '+$('#apellidos').attr('value'));	
+		$('#fecha_resumen').cargarInput('');				
+		$('#tipo_resumen').cargarSelect(0);
+		$('#descripcion_resumen').cargarTextarea('');
+					
+		if($('#id_estado').attr('value') == 2){
+			$('#form_resumen input[type="text"], #form_resumen textarea, #form_resumen select').attr('readonly', true);
+			$("#guardar_resumen").attr("disabled","disabled");
+		}
+		else{
+			$('#form_resumen input[type="text"], #form_resumen textarea, #form_resumen select').not('#nombre_beneficiario_resumen').removeAttr('readonly');
+			$("#guardar_resumen").removeAttr("disabled");
+		}
+		
+		$("#eliminar_resumen").hide();
+	}
+})(jQuery);
+
+(function($){	
+    $.fn.cargarResumen=function(respuesta){    	
+		$('#form_resumen').find('.input_error').removeClass('input_error');
+		$('#usuario_actualizo_resumen').html(respuesta.nombreUser[0]);
+		$('#fecha_actualizacion_resumen').html(respuesta.fechaActualizacion[0]);	
+		$('#id_resumen').cargarInput(respuesta.idResumen);		
+		$('#nombre_beneficiario_resumen').cargarInput($('#nombres').attr('value')+' '+$('#apellidos').attr('value'));	
+		$('#fecha_resumen').cargarInput(respuesta.fechaResumen);	
+		$('#tipo_resumen').cargarSelect(respuesta.tipoResumen);						
+		$('#descripcion_resumen').cargarTextarea(respuesta.descripcionResumen);
+					
+		if($('#id_estado').attr('value') == 2){
+			$('#form_resumen input[type="text"], #form_resumen textarea, #form_resumen select').attr('readonly', true);
+			$("#guardar_resumen").attr("disabled","disabled");
+		}
+		else{
+			$('#form_resumen input[type="text"], #form_resumen textarea, #form_seguimiento select').not('#nombre_beneficiario_seguimiento').removeAttr('readonly');
+			$("#guardar_resumen").removeAttr("disabled");
+		}
+		
+		if(respuesta.perfil > 0)
+			$("#eliminar_resumen").show();
+		else
+			$("#eliminar_resumen").hide();
+				
+		$('#actualizar_resumen').focus();
+	}
+})(jQuery);
+
+(function($){	
+    $.fn.cargarListaResumen=function(respuesta){
+    	var tiposResumen = ['', 'RESUMEN DE INTERVENCIÓN PROGRAMA PRONIÑO', 'DIAGNÓSTICO Y PLAN DE INTERVENCIÓN', 'SEGUIMIENTO PSICOSOCIAL'];
+
+		$.fn.limpiarResumen();		
+		$('#tabla_resumen').empty();		
+		$('#tabla_resumen').append('<thead><tr><th width="10%">Fecha</th><th width="90%">Descripcion</th></tr></thead><tbody id="desc_resumen"></tbody>');
+						
+		if(respuesta.lista){
+			for(i=0; i<respuesta.idResumen.length; i++){				
+				$('#desc_resumen').append('<tr class="ver_resumen" id="'+respuesta.idResumen[i]+'" title="'+respuesta.nombreUser[i]+' &raquo; '+respuesta.fechaActualizacion[i]+'"><td align="center">'+respuesta.fechaResumen[i]+" - "+tiposResumen[respuesta.tipoResumen[i]]+'</td><td align="justify">'+respuesta.descripcionResumen[i]+'</td></tr>');	
+			}			
+		}
+		$('#tabla_resumen').tablesorter({widgets: ['zebra']});
+		$('#actualizar_resumen').focus();
+	}
+})(jQuery);
+
+(function($){	
+    $.fn.resumen=function(opc){
+		if((opc == 'cargar' && $('#id_resumen').obligatorio()) || (opc == 'cargar_lista' && $('#id_beneficiario_resumen').obligatorio()) || (opc == 'eliminar' && $('#id_resumen').obligatorio()) || ($('#id_beneficiario_resumen').obligatorio() && $('#fecha_resumen').obligatorio() && $('#descripcion_resumen').obligatorio())){			
+			$("#guardar_resumen").attr("disabled","disabled");			
+			$('#cargando').show();
+			$('#opc_resumen').cargarInput(opc);													
+			var datos = $('#form_resumen').serialize();	
+			$.getJSON('php/beneficiario_resumen.php', datos, function(respuesta) {				
+				if(respuesta.login){					
+					if(respuesta.consulta){	
+						switch(respuesta.opc){
+							case 'cargar': 	$.fn.cargarResumen(respuesta);											
+											$('#error').html('Resumen cargado correctamente');
+											break;
+							case 'cargar_lista':$.fn.cargarListaResumen(respuesta);
+												$('#error').html('Registro de Resumenes');
+												break;				
+							case 'eliminar':$.fn.cargarListaResumen(respuesta);
+											$('#error').html('Resumen eliminado correctamente');
+											break;				
+							case 'guardar':	$.fn.cargarListaResumen(respuesta);
+											$('#error').html('Resumen guardado correctamente');
+											break;							
+						}								
+					}
+					else{
+						switch(respuesta.opc){
+							case 'cargar':	$.fn.limpiarResumen();
+											$('#error').html('Error al cargar el Resumen');
+											break;
+							case 'cargar_lista':$.fn.cargarListaResumen(respuesta);
+												$('#error').html('Error al cargar los Resumenes');
+												break;				
+							case 'eliminar':$.fn.cargarListaResumen(respuesta);
+											$('#error').html('Error al eliminar el Resumen');																					
+											break;				
+							case 'guardar':	$.fn.cargarListaResumen(respuesta);
+											$('#error').html('Error al guardar el Resumen');
+											break;						
+						}
+					}					
+				}
+				else{
+					$(window).off('beforeunload');
+					$(location).attr('href', 'index.php');
+				}				
+				$("#cargando").delay(400).slideUp(0);
+			})
+			.error(function() { 
+				$("#guardar_resumen").removeAttr("disabled");
+				$("#cargando").delay(400).slideUp(0);
+				$('#error').html("Error: Compruebe la conexion de red de su equipo! - resumen"); 
+			});	
+		}
+    }   
+})(jQuery);
+
 $(document).ready(function(){
 	/*
 	$(window).bind('beforeunload', function(){
@@ -1582,6 +1712,7 @@ $(document).ready(function(){
 	
 	$("#fecha_seguimiento").datepicker();
 	$("#fecha_remision").datepicker();
+	$("#fecha_resumen").datepicker();
 	
 	$("#multiple").cargarCheckbox(1);
 		
@@ -1976,8 +2107,8 @@ $(document).ready(function(){
 		$.fn.limpiarSeguimiento();		
 		$('#overlay').hide();
 		$('#seguimiento').hide();		
-	});	
-	
+	});
+
 	//Atencion Psicosocial
 	$("#ver_psicosocial").click(function(event){
 		$.fn.psicosocial('cargar_lista');					
@@ -2012,6 +2143,46 @@ $(document).ready(function(){
 		$.fn.limpiarPsicosocial();	
 		$('#overlay').hide();			
 		$('#psicosocial').hide();	
+	});
+	
+	//Resumen Atencion Psicosocial
+	$("#ver_resumen").click(function(event){
+		$.fn.resumen('cargar_lista');			
+		$('#overlay').show();		
+		$('#resumen').show();		
+	});	
+	
+	$("#actualizar_resumen").click(function(event){
+		$.fn.resumen('cargar_lista');		
+	});		
+	
+	$("#form_resumen").submit(function(event){
+		event.preventDefault();
+		$.fn.resumen('guardar');
+	});
+	
+	$("#imprimir_resumen").click(function(event){
+		window.open('pdf/resumen.php?id_beneficiario='+$('#id_beneficiario_resumen').attr('value'));
+	});
+	
+	$(".ver_resumen").live('click', function(event){
+		$('#id_resumen').cargarInput($(this).attr('id'));		
+		$.fn.resumen('cargar');			
+	});
+	
+	$("#eliminar_resumen").click(function(event){
+		if(confirm('Desea eliminar el resumen del '+$('#fecha_resumen').attr('value')))	
+			$.fn.resumen('eliminar');
+	});
+	
+	$("#cancelar_resumen").click(function(event){
+		$.fn.limpiarResumen();		
+		$('#overlay').hide();
+		$('#resumen').hide();		
+	});
+
+	$("#tipo_resumen").live('change', function(event){
+		alert();
 	});
 	
 	//Notas
@@ -2160,6 +2331,15 @@ $(document).ready(function(){
 			'displayFormat' : '#input/#max caracteres | #words palabras'
 	};
 	$('#observaciones_year').textareaCount(options_oy);
+
+	var options_dr = {
+			'maxCharacterSize': 8000,
+			'originalStyle': 'originalTextareaInfo',
+			'warningStyle' : 'warningTextareaInfo',
+			'warningNumber': 40,
+			'displayFormat' : '#input/#max caracteres | #words palabras'
+	};
+	$('#descripcion_resumen').textareaCount(options_dr);
 	
 	$("#input_buscar").focus();
 	$("#cargando").delay(400).slideUp(0);

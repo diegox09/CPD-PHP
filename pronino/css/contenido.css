@@ -61,11 +61,12 @@ textarea{border:1px solid #d5d5d5;width:97%;height:70px;padding:3px 5px;resize:n
 .input_l{width:96%}
 .select_c{width:99%}
 .select_l{width:100%}
+.textarea_b{height: 350px}
 
 #busqueda_beneficiario{width:1002px;margin:5px 0 0 0}
 #busqueda_beneficiario div{float:left}
 table tbody tr td{cursor:pointer}
-.ver_beneficiario:hover, .ver_nota:hover, .ver_seguimiento:hover, .ver_psicosocial:hover, .cargar_generico:hover{font-weight:bold}
+.ver_beneficiario:hover, .ver_nota:hover, .ver_seguimiento:hover, .ver_psicosocial:hover, .ver_resumen:hover, .cargar_generico:hover{font-weight:bold}
 
 .mini_formulario{width:496px;background:#f5f5f5;border-left:1px solid #d5d5d5;border-right:1px solid #d5d5d5;border-bottom:1px solid #d5d5d5;border-radius:3px;margin:4px}
 .mini_formulario form div{margin:4px;float:left}
@@ -90,8 +91,8 @@ table tbody tr td{cursor:pointer}
 .header_diagnostico label{font-size:12px;font-weight:bold}
 .header_psicosocial{font-size:10px;padding:8px 0;text-align:left;background-color:#f5f5f5;border:1px solid #e5e5e5;width:972px!important;margin:0!important}
 
-#generico, #diagnostico, #seguimiento, #psicosocial, #psicologia{position:absolute;top:-5px;width:992px;margin:25px 0;background:#fff;border:1px solid #d5d5d5;z-index:3}
-#botones_diagnostico, #botones_seguimiento, #botones_psicosocial, #botones_psicologia{position:fixed;bottom:25px;right:-4px;width:100%;color:#FFF;font-weight:bold;text-align:right;background:url(../img/overlay.png);padding:10px 0}
+#generico, #diagnostico, #seguimiento, #psicosocial, #psicologia, #resumen{position:absolute;top:-5px;width:992px;margin:25px 0;background:#fff;border:1px solid #d5d5d5;z-index:3}
+#botones_diagnostico, #botones_seguimiento, #botones_psicosocial, #botones_psicologia, #botones_resumen{position:fixed;bottom:25px;right:-4px;width:100%;color:#FFF;font-weight:bold;text-align:right;background:url(../img/overlay.png);padding:10px 0}
 #botones_generico{width:980px;text-align:right}
 
 #actividades{position:absolute;top:-5px;width:992px;margin:25px 0;background:#fff;padding:20px 0;border:1px solid #d5d5d5;z-index:3}

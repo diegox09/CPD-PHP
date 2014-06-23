@@ -879,5 +879,28 @@ class Pronino extends mysqli {
 	public function delete_beneficiario_psicosocial($idPsicosocial){
         return $this->query('DELETE FROM pronino_psicosocial WHERE idAtencionPsicosocial = "'.$idPsicosocial.'"');
     }
+
+    /*Resumen Atencion Psicosocial*/
+	public function get_resumen_by_id($idResumen){		
+        return $this->query('SELECT * FROM pronino_resumen WHERE idResumen = "'.$idResumen.'"');
+    }
+
+	public function get_resumen_by_beneficiario($idBeneficiario){		
+        return $this->query('SELECT * FROM pronino_resumen WHERE idBeneficiario = "'.$idBeneficiario.'" ORDER BY fechaResumen, fechaActualizacion');
+    }
+	
+	public function insert_beneficiario_resumen($idBeneficiario, $fechaResumen, $tipoResumen, $descripcionResumen, $idUser, $fechaActual){		
+		$descripcionResumen = $this->real_escape_string($descripcionResumen);	
+        return $this->query('INSERT INTO pronino_resumen (idBeneficiario, fechaResumen, tipoResumen, descripcionResumen, idUser, fechaActualizacion) VALUES("'.$idBeneficiario.'", "'.$fechaResumen.'", "'.$tipoResumen.'", "'.$descripcionResumen.'", "'.$idUser.'", "'.$fechaActual.'")');
+    }
+	
+	public function update_beneficiario_resumen($idResumen, $idBeneficiario, $fechaResumen, $tipoResumen, $descripcionResumen, $idUser, $fechaActual){
+		$descripcionResumen = $this->real_escape_string($descripcionResumen);
+		return $this->query('UPDATE pronino_resumen SET fechaResumen = "'.$fechaResumen.'", tipoResumen = "'.$tipoResumen.'", descripcionResumen = "'.$descripcionResumen.'", idUser = "'.$idUser.'", fechaActualizacion = "'.$fechaActual.'" WHERE idResumen = "'.$idResumen.'"');	
+    }
+	
+	public function delete_beneficiario_resumen($idResumen){
+        return $this->query('DELETE FROM pronino_resumen WHERE idResumen = "'.$idResumen.'"');
+    }
 }
 ?>

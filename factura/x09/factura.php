@@ -26,13 +26,12 @@
 		$nombres = strtoupper(utf8_decode($_GET['persona_natural']));
 		$telefono = $_GET['telefono'];
 		$direccion = strtoupper(utf8_decode($_GET['direccion_persona']));		
-		//$descripcion = strtoupper(nl2br(htmlentities(str_replace("<BR />", "", $_GET['descripcion']),ENT_NOQUOTES,'UTF-8')));
 		$descripcion = strtoupper(nl2br(utf8_decode(str_replace("<BR />", "", $_GET['descripcion']))));
 		$valor = strtr($_GET['total'], $quitar);
 		$tarifaIva = $_GET['tarifa_iva'];
 		$observaciones = strtoupper(utf8_decode($_GET['observaciones']));
 		//Actualizacion
-		$descripcionValor = nl2br(str_replace("<BR />", "", $_GET['descripcion_valor']));
+		$descripcionValor = strtoupper(nl2br(utf8_decode(str_replace("<BR />", "", $_GET['descripcion_valor']))));
 		$subtotal = strtr($_GET['subtotal_factura'], $quitar);
 		$valorIva = strtr($_GET['iva_factura'], $quitar);
 		$facturaManual = $_GET['factura_manual'];
@@ -89,8 +88,7 @@
 				$nitCliente = $factura['nit'];
 				$nombreCliente = utf8_encode($factura['nombres']);
 				$telefonoCliente = $factura['telefono'];
-				$direccionCliente = utf8_encode($factura['direccion']);
-				//$descripcion = html_entity_decode($factura['descripcion'],ENT_NOQUOTES,'UTF-8');
+				$direccionCliente = utf8_encode($factura['direccion']);				
 				$descripcion = utf8_encode($factura['descripcion']);
 				$valor = $factura['valor'];
 				$tarifaIva = $factura['tarifaIva'];
@@ -99,7 +97,7 @@
 				$fechaActualizacion = $factura['fechaActualizacion'];
 				$idUser = $factura['idUser'];	
 
-				$descripcionValor = $factura['descripcionValor'];
+				$descripcionValor = utf8_encode($factura['descripcionValor']);
 				$subtotal = $factura['subtotal'];
 				$valorIva = $factura['valorIva'];
 				$facturaManual = $factura['facturaManual'];

@@ -1153,7 +1153,67 @@
                         </div>
                     </form>
                 </div>                
-            </div>       
+            </div>
+
+            <div id="resumen" style="display:none">
+            	<div class="header_info">
+                    RESUMEN ATENCIÓN PSICOSOCIAL                    
+                    <label>
+                        &nbsp;&raquo;&nbsp;
+                        <span id="usuario_actualizo_resumen"></span>                            
+                        &nbsp;&raquo;&nbsp;
+                        <span id="fecha_actualizacion_resumen"></span> 
+                        &nbsp;
+                        <a href="#" id="actualizar_resumen" class="actualizar" title="Actualizar">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                	</label> 
+                </div>
+	            <div>
+	            	<form id="form_resumen" action="#" method="get">
+	            		<input type="hidden" id="id_resumen" name="id_resumen" value="" />
+	                	<input type="hidden" id="id_beneficiario_resumen" name="id_beneficiario" value="" label="Seleccione un beneficiario"/>
+	                    <input type="hidden" id="opc_resumen" name="opc" value="" />
+	                    <div style="width:100%">
+	                    	<div style="width:350px">
+	                        	<label>Nombre Beneficiario</label>
+	                        	<input type="text" name="nombre_beneficiario" id="nombre_beneficiario_resumen" class="input_l" value="" readonly />
+	                        </div> 
+	                        <div style="width:190px"> 
+                                <label>Fecha</label><br>
+                                <input type="text" name="fecha_resumen" id="fecha_resumen" class="input_c" value="" label="Digite la fecha del resumen" />                               
+                            </div>
+                            <div style="width:210px"> 
+                                <label>Tipo</label><br>
+                                <select id="tipo_resumen" class="select_l" name="tipo_resumen" label="Seleccione una Opcion">
+                                	<option value="0"> - Seleccionar - </option>
+		                            <option value="1"> Resumen de Intervencion </option>
+		                            <option value="2"> Diagnostico y Plan de Intervencion </option>
+		                            <option value="3"> Seguimiento Psicosocial </option>	
+                                </select>                               
+                            </div>                                                                                     
+	                        <div style="width:991px" class="clear">
+	                            <div class="header_diagnostico">
+	                            	<label>SITUACION NNA</label><br>
+	                            	RESUMEN DE INTERVENCIÓN: Situación Familiar(Tipología Familiar, Condiciones Socio económicas, Problemáticas Principales), Escolarización, Situación frente al T.I.<br>
+	                            	PLAN DE INTERVENCIÓN: Considerar los recursos familiares y personales del NNA, los intereses y motivaciones del NNA. Puede estar orientado al NNA o a la familia
+	                            </div>
+	                            <textarea name="descripcion_resumen" id="descripcion_resumen" class="textarea_b" value="" ></textarea>        
+	                        </div>
+	                        	                        
+	                        <div id="botones_resumen">
+	                        	<input type="button" id="eliminar_resumen" class="boton_naranja" value="Eliminar" title="Eliminar Resumen" style="display:none"/>
+	                            &nbsp;&there4;&nbsp;
+	                            <input type="submit" id="guardar_resumen" class="boton_gris" value="Guardar" title="Guardar Resumen"/>
+	                            <input type="button" id="cancelar_resumen" class="boton_naranja" value="Cancelar" title="Cancelar Resumen"/>
+	                            &nbsp;&there4;&nbsp;
+	                            <input type="button" id="imprimir_resumen" class="boton_azul" value="Imprimir" title="Imprimir Resumen"/>
+	                            &nbsp;	
+	                        </div>
+	                	</div>        
+	                </form>
+	            </div>
+	            <table id="tabla_resumen" class="tablesorter"></table>
+                <div class="espacio"></div>
+	       	</div>       
             
             <form id="form_year" action="#" method="get">
                 <input type="hidden" id="id_beneficiario_year" name="id_beneficiario" value="" label="Seleccione un beneficiario"/>    
@@ -1507,6 +1567,7 @@
                         <input type="button" id="ver_psicosocial" class="boton_azul" value="Psicosocial" title="Atencion Psicosocial"/> 
                         &nbsp;&there4;&nbsp;
                         <input type="button" id="ver_mes" class="boton_azul" value="Actividades" title="Horario Actividades Beneficiario" style="display:none"/>
+                        <input type="button" id="ver_resumen" class="boton_naranja" value="Resumen" title="Resumen"/> 
                     </div>  
                                  
                     <div id="botones_r">
