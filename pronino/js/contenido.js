@@ -2180,10 +2180,6 @@ $(document).ready(function(){
 		$('#overlay').hide();
 		$('#resumen').hide();		
 	});
-
-	$("#tipo_resumen").live('change', function(event){
-		alert();
-	});
 	
 	//Notas
 	$("#form_nota").submit(function(event){

@@ -358,6 +358,7 @@
                             <option value="2"> Monoparental Paterna </option>
                             <option value="3"> Monoparental Materna </option>
                             <option value="4"> Extensa </option>
+                            <option value="6"> Recompuesta </option>
                             <option value="5"> Otra </option>
                         </select> 
                     </div>  
@@ -1187,7 +1188,6 @@
                                 	<option value="0"> - Seleccionar - </option>
 		                            <option value="1"> Resumen de Intervencion </option>
 		                            <option value="2"> Diagnostico y Plan de Intervencion </option>
-		                            <option value="3"> Seguimiento Psicosocial </option>	
                                 </select>                               
                             </div>                                                                                     
 	                        <div style="width:991px" class="clear">
